@@ -1,0 +1,22 @@
+1. DEV_ENV adinda bir qovluq yaradiriq 
+
+2. Front qovlugu DEV_ENV icine yerlesdiririk.
+
+3. Terminalda yaziriq:                                                  sudo python3 -m venv venv        - windows ucun:  python -m venv venv
+
+4. Yaradilmis olan VENV qovluguna DJANGO yukleyeceyik
+
+5. Bunun ucun ise ilk novbede hemin qovlugu aktivlesdirmek lazimdir
+
+6. Terminalda aktivlesdirmek ucun yaziriq:                              source venv\Scripts\activate                 - windows ucun: venv\Scripts\activate
+
+7. Sonra DJANGO yukleyirik:                                             sudo pip install django==4.2.7
+
+8. Bu kamandani yazaraq yuklenen paketleri gormek mumkundur:            pip list
+
+9. Bu kamandani yazaraq DJANGO-da istifade ede bileceyimiz              django-admin
+diger komekci kamandalari gore bilerik. 
+
+10. Komekci kamandalardan bize lazim olan 'startproject'                django-admin startproject app
+olacaq. Bu kamanda ile proyektimizi yaradasyiqi. APP 
+yazdigimiz yerde proyekte istediyiniz adı vermek olar.
