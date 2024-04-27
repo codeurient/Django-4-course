@@ -1,0 +1,13 @@
+1. MANAGE fayli ile istifade edilecek PYTHON kamandlarini gormek ucun bu kodu terminalda yaza bilerik:                python manage.py  
+
+
+2. Qarsimiza cixacaq kamandalardan bize lazim olan en sonuncu sirada duran RUNSERVER kamandidir:                      python manage.py runserver
+
+
+3. Terminalda domain adı goreceyik hansi ki bu ad ile web saytimiza daxil ola bilerik
+
+
+4. Ve elave olaraq 'db.sqlite3'  adinda bir fayl yarancaq. Bu fayl muveqqeti verilenler bazasi yaratmagin en sade qaydasidir.
+
+
+5. Eger sayti basqa portda açmaq lazim olarsa onda bele yazmaq lazimdir:                                               python manage.py runserver 4000

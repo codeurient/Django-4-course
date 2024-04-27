@@ -1,0 +1,15 @@
+1. Eger terminalda kamanda yazaraq proqrami işə salmaq istemirikse onda Sol Menu-den RUN AND DEBUG bolmune daxil olmaliyiq.
+
+
+2. sonra secirik:     Create a launch.json file
+
+
+3. Ortada yuxarida axtarma bolmesinde DJANGO secirik ve avtomatik olaraq LAUNCH.JSON adinda fayl yaradilacaq. Bu qeder.
+
+
+
+
+4. NOT !!!! Eger hemin fayl avtomatik yaranmasa yaxud DJANGO yazisini gormeseniz onda gostereceyim kamandani manul yazaraq 
+.VSCODE adli qovluqda yaddasa hekk ede bilersiniz. MAC ve WINDOWS emeliyyat sistemlerinde bu kodlarin yazilis qaydasi ferqlene biler.
+
+LAUNCH.JSON faylinda hemin kodun ferqli yazilis qaydalarini qeyd etmisem. Bir-bir yoxlayaraq uygun olani saxlamaq olar.

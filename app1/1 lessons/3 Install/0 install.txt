@@ -1,0 +1,38 @@
+1. DEV_ENV adinda bir qovluq yaradiriq 
+
+2. Front qovlugu DEV_ENV icine yerlesdiririk.
+
+3. Terminalda yaziriq:                                                  sudo python3 -m venv venv                   - windows ucun:  python -m venv venv
+
+4. Yaradilmis olan VENV qovluguna DJANGO yukleyeceyik
+
+5. Bunun ucun ise ilk novbede hemin qovlugu aktivlesdirmek lazimdir
+
+6. Terminalda aktivlesdirmek ucun yaziriq:                              source venv\Scripts\activate                 - windows ucun: venv\Scripts\activate
+
+7. Sonra DJANGO yukleyirik:                                             sudo pip install django==4.2.7
+
+8. Bu kamandani yazaraq yuklenen paketleri gormek mumkundur:            pip list
+
+9. Bu kamandani yazaraq DJANGO-da istifade ede bileceyimiz              django-admin
+diger komekci kamandalari gore bilerik. 
+
+10. Komekci kamandalardan bize lazim olan 'startproject'                django-admin startproject app
+olacaq. Bu kamanda ile proyektimizi yaradasyiqi. APP 
+yazdigimiz yerde proyekte istediyiniz adı vermek olar.
+
+11. Yaradmis oldugumuz APP qovluguna baxsaq gorerik ki, APP adinda basqa bir qovluq daha var. Ancaq xarici APP qovlugu bizim yaratdigimizdir
+daxili APP ise proqramin yaratdigidir. Bu ikisini ferqlendirmek ucun Xarici APP qovlugunun adini APP1 deye deyisdirek.
+Daxil APP qovlugunda ise proyektimizin özü olacaq. 
+
+12. VENV qovlugunu ne ucun yaratdiq ? PYTHON proyektleri daha rahat yigmaq ve boyutmek ucun, kenardan yukleyeceyimiz kitabxanalardan ve paketlerden 
+istifade etmek lazimdir. Hemin kitabxana ve paketler VENV qovlugunda yerlesir ve proyektimizin yigilmasina komek edecek. APP1 ve VENV qovluqlarinin 
+ayri olmasi ise onlarin bir-birinden rahat secilmesi, ferqlenmesi ucundur. 
+
+Hemde ki, APP1- yarada bilmek ucun DJANGO yuklemek lazimdir. DJANGO yuklemek ucun VENV-den istifade etmeliyik. Yəni mentiqnen 1ci APP1-i yarada bilmirik
+eger VENV yoxdursa. 
+
+13. Artiq APP1 adinda proyektimizi ehtiva edecek qovlugu yaratdiqdan sonra, VSC icinde hemin qovlugu aciriq. Ancaq Virtual Mühit qapanacaq.
+Hansi ki, source venv\Scripts\activate  yazaraq hemin muhite kecid etmisdik. Bes nece etmek olar ki, daima hemin virtual muhit aciq qalsin ? 
+
+14. APP1 adli qovlugu VSC-da acdiqda asagida sag terefde Python versiyasi olacaq. Onun uzerine klikleyirik. Sekilleri izleyek. 
