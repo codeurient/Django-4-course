@@ -1,0 +1,62 @@
+1. DEBUG = True
+Proqram deploy edilene qeder DEBUG deysikeninin deyerini TRUE olaraq saxlayiriq. Deploy etdikden sonra FALSE edirik ki, lazimli lazimsiz gosterilecek xetalari gozledek.
+
+
+
+2. ALLOWED_HOSTS = []
+DEBUG deyiskeninin deyerini FALSE etdikde xeta almamaq ucun yuxarida gosterilen ALLOWED_HOSTS array-inin icinde 'domainadı.com' deyerek host adini yazmaq lazimdir. Ancaq 
+butun hostlar ucun tetbiq edilsin isteyirikse onda '*' ulduz simvolu qoyuruq. Meslehet olanda budur:     ALLOWED_HOSTS = ['*']
+
+
+
+3. INSTALLED_APPS = []
+Bu array tetbiqimizin componentlerini tetbiq etmek ucun istifade edilir.
+
+
+
+4. MIDDLEWARE = []
+Bu array tetbiqin tehlukesizliyini, HTTP sorgulardan gelen cavablari idare etmek ucun istifade edilir ve bu array icinde yazilan deyerlerin sirasi cox onemlidir.
+
+
+
+5. ROOT_URLCONF
+Bu deyisken APP/URLS.PY faylindan marsrutlari elde etmek ucun istifade edilir.
+
+
+
+6. TEMPLATES = []
+Verilenler bazasindan elde edilen datalari istifadeciye gondermek ucun istifade edilir.
+
+
+7. WSGI_APPLICATION
+Bu deyisken hansi protokol ile isleyeceyimizi teyin etmek ucun istifade edilir.
+
+
+8. DATABASES
+Bu obyekt hansi verilenler bazasi ile isleyeceyimizi teyin etmek ucun istifade edilir. Default olaraq SQLLITE olacaq. DEPLOY etdikde ise POSTGRESQL ve.s kimi DB sece bilerik.
+
+
+
+9. AUTH_PASSWORD_VALIDATORS
+Bu array onun ucun istifade edilir ki, istifadeciler zeyif parollar yaza bilmesinler. Eger 12345 kimi zeyif parol yazsalar proqram bunu qebul etmeyecek ve daha tehlukesiz sifre
+yazmasini teleb edecek.
+
+
+
+10. LANGUAGE_CODE
+DJANGO-nun hansi dilde xidmet gostereceyini teyin edir.
+
+
+
+11. TIME_ZONE
+Proqramin hansi vaxt zonasinda isleyeceyini teyin edir.
+
+
+
+12. STATIC_URL
+URL adreslere hansi prefiksin elave edileceyini teyin etmek ucun istifade edilir.
+
+
+
+12. DEFAULT_AUTO_FIELD
+Verilenler bazasinda her elave edilen yeni datanin avtomatik olaraq sira ile teyin edilen identifikator nomresine sahib olmasi ucun istifade edilir. 1,2,3,4,5 ve.s

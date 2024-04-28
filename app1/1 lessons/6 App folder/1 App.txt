@@ -1,0 +1,20 @@
+1. APP qovlugu proqramimizin nüvəsidir. Proyektimizin əsas ayarlarını ehtiva edir.
+
+
+2. __pycache__                  - App qovlugunda olan diger fayllarin, keşlənmiş formalarini ehtiva edir. Bu proqramin suretli işləməsi üçündür
+
+
+3. __init__.py                  - Bu fayl hemise bos olur. Diger fayllarin bir-biri ile elaqedar oldugunu proqrama bildirmek ucun istifade edilir.
+
+
+4. asgi.py   &    wsgi.py       - Bu fayllar o vaxt lazimdir ki, biz proqram tamamlandiqdan sonra onu deploy edek. Hemin fayllar Django-nun Server ile hansi qaydaya (protokol)
+                                esasen elaqe yaradacagini teyin edir. Tetbiqi sinxron formada yaratsaq WSGI protokolu ile servere yerlesdirmek lazimdir. Eger asinxron formada 
+                                yaratsaq ASGI protokolu ile servere yerlesdirmek lazimdir. Eger meselen ticaret sayti yigiriqsa onda WSGI eger strim sayti kimi saytlar yigiriqsa onda
+                                ASGI protokolundan istifade etmek lazimdir.
+
+
+5. urls.py                      - bu faylda marşrutları təyin edirik.
+
+
+
+6. settings.py                  - Bu fayl tetbiqimizin ayarlarini idare etmek ucun istifade edilir. 
