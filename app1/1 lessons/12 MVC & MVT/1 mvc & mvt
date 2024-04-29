@@ -1,0 +1,24 @@
+1) MVC
+
+
+Model - Verilenler bazasi ile islemek ucun istifade edilen qovluqdur.
+
+View - Istifadeci terefinde gosterilecek interfeysi idare etmek ucun istifade edilen qovluqdur.
+
+Controller - Saytin funksionalligini, idare etmek ucun istifade edilen qovluqdur.
+
+
+
+
+
+2) MVT
+
+Model - Verilenler bazasi ile islemek ucun istifade edilen qovluqdur.
+
+View - Istifadeci terefinde gosterilecek interfeysi ve funksionalligini idare etmek ucun istifade edilen qovluqdur.
+       İstifadəçilərin məlumatlara baxmaq, əlavə etmək, redaktə etmək və silmək kimi əməliyyatları yerinə yetirdiyi hissədir.
+
+Templates - Bu qovluq, Django proyektində istifadə olunan şablon fayllarını (HTML, CSS, JavaScript, və s.) saxlamaq üçün 
+            istifadə olunur.
+
+            

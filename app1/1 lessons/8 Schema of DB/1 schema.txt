@@ -1,0 +1,40 @@
+1. Sayti yaratmaga baslamadan evvel onun diaqramini yaratmaq lazimdir. Bu proyketin vaxt itkisi olmadan daha tez erseye gelmesine komek edecek. Diaqram yaratmaq ucun xususi bir sayta ehtiyac yoxdur.
+Bunu kagiz uzerinde yaxud excel, word, paint ve.s kimi sade proqramlar vasitesi ile de etmek mumkundur. Ancaq diaqram yaratmaq ucun istifade edilen xususi saytlarda movcuddur. Meselen:
+
+https://app.diagrams.net/
+
+
+
+2. Bizim saytimiz satiş sayti olacaq. Texmini bu haqqda ne demek olar ? Meselen: 
+
+a) Kateqoriya:   Elektronika, Geyim,  Mebel   ve.s.... Her kateqoriyanin ozune mexsus identifikatoru olur.
+
+b) Produkt:     her produkt 1 kateqoriyaya mexsus olur. Meselen:
+
+                Elektronika kateqoriyasina mexsus 25 ferqli produkt ola biler. Her produktin ozune mexsus ID-si olacaq.
+                Geyim kateqoriyasina mexsus 12 ferqli produkt ola biler. Her produktin ozune mexsus ID-si olacaq.
+                Mebel kateqoriyasina mexsus 21 ferqli produkt ola biler. Her produktin ozune mexsus ID-si olacaq.
+
+c) Istifadecileri:  Her istifadecinin ozune mexsus identifikatoru olur. 
+
+
+d) Sebet:           Her istifadecinin ozune mexsus sebeti olur ve bura PRODUKT elave edir. Bunun ucun sebet adli cedvelde lazimdir.
+                    Her istifadeci sebetinin oz ID-si, Istifadeci ID-si ve Produkt ID-si olacaq.
+
+
+e) Sifaris:         Istifadeci sifaris etdikde SIFARIS cedveli yaradilmalidir ki, bilek hansi istifadeci hansi adrese sifaris etdi.
+
+
+
+f) Sifaris edilen produkt:          Her sifaris edilen produkt SIFARIS cedveline bagli olacaq. Belelikle kimin hansi produktu hansi adrese
+                                    sifaris etdiyini izleye bilek.
+
+
+
+
+ve.s
+
+
+
+
+

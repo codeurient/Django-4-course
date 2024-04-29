@@ -1,0 +1,4 @@
+1) web saytimizin MAIN hissesini (tetbiqini) yaratmaq ucun terminalda yaziriq:          python manage.py startapp main
+
+
+2) MAIN tetbiqini yaratdiqdan sonra ilk atilacaq addim onu, APP qovlugunda olan SETTINGS.PY faylinda qeydiyyata almaqdir.

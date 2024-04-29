@@ -1,0 +1,29 @@
+1) Yaradilan MAIN qovlugunun icinde ferqli fayllar ve fayllar var. 
+
+Bize her defe tetbiqimizin ferqli hisselerini yaratdiqda bu fayl ve qovluqlar her tetbiq ucun yaradilan qovluqda 
+movcud olacaq. Onlarin isleme mentiqi ise hamisinda eynidir.
+
+
+
+Meselen: 
+
+a) MIGRATIN qovlugu verilenler bazasini idare etmek ucundur. 
+
+b) ADMIN.PY fayli onun ucundur ki, verilenler bazasinda yaradilan cedveli admin panelinde qeydiyyata alaraq melumatlari
+eks etdirek.
+
+с) APPS.PY fayli hal-hazirki, MAIN tetbiqinin spesifik ayarlarini idare etmek ucun istifade edilir.
+Spesifik ayarlar dedikden neler nezerde tutur ?
+    - Verilənlər Bazasının Parametrləri: meselen, verilenler bazasina qosulmaq ucun olan lazimli ayarlar.
+    - Statik Fayl Parametrləri: meselen, şəkillər, CSS, JavaScript və s 
+    - URL adres parametrleri
+    - ve.s
+
+d) MODELS.PY faylinda class-lar yazilir hansi ki, bu class-lar tetbiqde hansi cedvellerin istifade edileceyini 
+gostermek ucun istfade edilir.
+
+
+e) TESTS.PY fayli, kodun islekliyini test etmek ucun istifade edilir.
+
+
+f) VIEWS.PY faylinda, istifadeciler terefinden gelen sorgulari idarə edən funksiyalar yaxud class-lar yazilir

@@ -1,0 +1,19 @@
+1) Sekilde de gorulduyu kimi, istifadeci URL yerinde link daxil edir. Bu marsrutlar URLS.PY faylinda yazilir.
+
+2) Hemin marsrut, bizi VIEWS.PY faylina yonlendirir. Bu faylin icinde yazilan funksiya vasitesi ile
+
+3) MODELS.PY faylina muraciet edirik ve verilenler bazasindan melumatlari elde ederek geriye VIEWS.PY faylina qaytaririq.
+
+4) Geri qaytarilan melumatlar ile lazim olan emeliyyatlari icra ederek, Templates (yəni, şablonu) yaradiriq.
+
+5) Yaratdigimiz şablonu geri VİEW.PY faylina qaytaririq sonra URLS.PY faylina sonra ise Istifadeciye goruntu veririk.
+
+
+Istifadeci -> URLS.PY -> VIEWS.PY -> MODELS.PY -> VIEWS.PY -> TEMPLATES -> VIEWS.PY -> URLS.PY -> Istifadeci
+
+
+
+
+NOT. URLS.PY dedikde nezerde tutulan APP qovlugundaki fayldir. VIEWS.PY, MODELS.PY dedikde ise MAIN qovlugundaki fayllar 
+nezerde tutulur. Her component ucun MAIN kimi ferqli qovluqlar yarada bilerik ve her qovluqda bu VIEWS.PY, MODELS.PY ve.s 
+benzeri fayllar olacaqdir.
