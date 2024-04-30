@@ -1,0 +1,34 @@
+"""
+URL configuration for app project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+# 2) 
+from main import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # 1) Ana sehife ucun PATH() metodunun birinci parametrini bos qoyuruq. Bu URL adresi bizi ana sehifeye yonlendirecek.
+    # Ikinci parametrde ise INDEX() metodunu yazmaliyiq. Bu o demekdir ki, Ana sehifeye yonlendirilecek marşrut üçün INDEX()
+    # funksiyasini qeydiyyata aliriq. Bunun ucun 'MAIN/VIEWS.PY' faylini IMPORT etmeliyik. Hemin funksiyanin adini yazdiqda onun
+    # onunde () yumru morterize qoymaga ehtiyac yoxdur. Qeydiyyata salmaq ucun sadece adini yazmaq kifayetdir.
+    path('', views.index, name='index'),
+    # 3) ucuncu parametr, ( name='index') onun ucun istifade edilir ki, movcud URL adresinə daha rahat basa dusulen qisa ad teyin edek.
+
+
+    # 4) Test meqsedli ikinci URL adreside elave edek ve sonra brauzere kecerek URL yerinde yazaq:  http://127.0.0.1:8000/about/
+    path('about/', views.about, name='about'),
+]

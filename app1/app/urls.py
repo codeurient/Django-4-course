@@ -1,22 +1,17 @@
-"""
-URL configuration for app project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
+from main import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    # 1) Birinci parametrde marsrut adı olaraq istenileni yazmaq olar. Ikinci parametrde ise ABOUT, funksiyamiza link vermisik. Yəni funksiyani cagirmisiq.
+    # ucuncu parametr ise hemin url-i view icinde hansi adla cagiracagimizi teyin edir. PATH funksiyasinin ustune kursoru getirdikde ->URLPattern bele bir
+    # yazi goreceyik. Bu onu bildirir ki, hemin funksiya, URL ile bagli informasiyani return edir.
+    path('about/', views.about, name='about'),
+
+    # Istifadeci URL yerinde bir seyler yazdiqda, brauzer avtomatik olaraq hemin istifadeci haqqinda olan butun melumatlari servere gonderir. PATH metodu da
+    # bu melumatlari serverden alaraq REQUEST parametrine yerlesdirir.
 ]
