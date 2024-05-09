@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <p>{{ content }}</p>
+
+
+    <hr>
+    <p>{{ list }}</p>
+    {% comment %} 
+        1) PYTHON icinde LIST-in deyerlerini elde etmek ucun [] kvadrat morterizeden istifade edirdikse, DJANGO-da sablon icinde
+        LIST deyerlerini elde etmek ucun noqte qoyaraq hemin deyerin indeksini yazmaq lazimdir. Belelikle list-in 1ci elementini elde edirik.
+    {% endcomment %}
+    <p>{{ list.0 }}</p>
+
+
+    <hr>
+    <p>{{ dict }}</p>
+    {% comment %} 
+        2) Hemcinin DICT icinden deyerleri elde etdikde noqte ve acar soz yazmaq lazimdir.
+    {% endcomment %}
+    <p>{{ dict.first }}</p>
+
+
+    <hr>
+    <p>{{ bool }}</p>
+
+
+
+</body>
+</html>

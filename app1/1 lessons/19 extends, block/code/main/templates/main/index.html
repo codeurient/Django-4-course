@@ -1,0 +1,41 @@
+{% extends "main/base.html" %}
+{% comment %}!  2) SPESIFIK olan bloklari INDEX.HTML faylindan BASE.HTML faylina gondermek ucun EXTENDS deyerek BASE.HTML faylina gondermek etmeliyik. Bu link vermeye bezneyir. EXTENDS kodu en yuxarida yazilmalidir.   {% endcomment %}
+{% comment %}!  EXTENDS genislendirmek, inkisaf etdirmek, artirmaq kimi menalara gelir. Bu faylda yuxarida oldugu kimi yazdiqda demis oluruq ki, INDEX.HTML fayli ile genislendiririk BASE.HTML faylini                   {% endcomment %}
+
+
+
+
+
+
+{% comment %}!  1) STATIC fayllar sablondan sablona oturulmur. Burda load static yazdigimiz kimi INDEX.HTML-de de eynisini yazmaliyiq.  {% endcomment %}
+{% load static %}
+
+
+
+
+{% comment %}!    3) BASE.HTML faylinda yazdigimiz BLOCK adı (css) ile INDEX.HTML faylinda yazdigimiz BLOCK adı (css) eyni olmalidiri ki, proqram neyi hara gonderdiyini anlaya bilsin.  {% endcomment %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock css %}
+
+
+
+
+
+
+{% comment %}!    4)  {% endcomment %}
+{% block content %}
+    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+{% endblock content %}
+
+
+
+
+{% comment %}!    5) Bu kodlarin sirasinin nece olmasinin hec bir ehemiyyeti yoxdur. Cunki BLOCK adlari ile ozleri avtomatik hara getmek lazim olduqlarini bilirler.  {% endcomment %}
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Codeurient 2024</p>
+        </div>
+    </footer>
+{% endblock footer %}

@@ -1,0 +1,13 @@
+1) Fayllar STATIC ve SPESIFIK olmaq uzere 2 hisseye ayrilirlar. 
+
+
+
+2) Saytin meselen HEADER, FOOTER ve.s kimi bezi hisseleri statikdir. Yəni, hansi sehifeye daxil olsaqda hemin hisseler butun sehifelerde eynidir. Buna statik deyirler.
+
+
+
+3) Ancaq her sehifenin ozune xas ferqli goruntusude movcuddur. Bu ferqli olan hisselere spesifik deyirler.
+
+
+
+4) Meselen: MAIN/TEMPLATES/MAIN qovlugunda BASE.HTML adinda fayl yaradiriq ve bu faylin icinde web saytimizin her sehifesi ucun statik olacaq hisseleri saxlayiriq.

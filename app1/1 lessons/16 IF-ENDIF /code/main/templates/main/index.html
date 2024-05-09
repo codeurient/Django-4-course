@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    {% comment %} 
+    
+        1) DNAJGO-da Sablon tag-leri deyilen bir termin vardir. Bu tag-ler PYTHON-in, if, for ve.s kimi kodlarini html icinde yazmaq ucun istifade edilir.
+
+        Meselen eger sorgu yaradaraq bir seyleri yoxlamaq isteyirikse onda IF konstruksiyasindan istifade edilir. Sablon tag-leri, {% icinde yazilir %}
+
+    {% endcomment %}
+
+
+
+    <p>{{ content }}</p>
+
+    {% comment %} 
+        2) Eger 'is_authenticated' xassesinin deyeri TRUE olarsa IF kanstruksiyasi isleyecek ve ekranda netice eks olunacaq.
+    {% endcomment %}
+    {% if is_authenticated %} 
+
+        <p>{{ list.0 }}</p>
+        <p>{{ dict.first }}</p>
+
+    {% endif %}
+
+
+
+
+
+    <p>{{ bool }}</p>
+
+</body>
+</html>

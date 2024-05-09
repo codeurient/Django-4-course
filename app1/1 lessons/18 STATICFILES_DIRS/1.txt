@@ -1,0 +1,29 @@
+1) Evvelki dersde dedik ki, ANA sehifen ucun ilk once MAIN adinda qovluq yaradiriq ve hemin qovluq icinde de TEMPLATES adinda qovluq yaradiriq. 
+
+Sonra ise bu TEMPLATES icinde yeniden MAIN adinda qovluq yaradiriq ki, eger ana sehifeden ferqli bir sehife yaradariqsa onda, INDEX.HTML fayllari bir-birine qarismasin.
+
+Yəni, eger bele olsa idi:  main/templates/index.html
+                           about/templates/index.html         onda, DJANGO ehtimal varki, fayllari qarisdirsin. Hanis TEMPLATES icindeki INDEX.HTML faylini acmaq lazim oldugunu bilmesin.
+
+Ancaq eger bele yazsaq:    main/templates/main/index.html
+                           about/templates/about/index.html   onda, DJANGO tam deqiq bilecek ki, MAIN icinde olan yaxud ABOUT icinde olan INDEX.HTML faylinimi nezerde tuturuq.
+
+
+2) Eyni qaydani STATIC adli qovluq ucunde tetbiq etmek lazimdir. Yəni, bele yazmaq lazimdir:   main/static/main  
+Main icinde Static ve onun icinde yeniden Main qovlugu ve yoluda onda bele teyin edecekdik:    <script src="{% static "main/js/jquery/jquery-3.7.0.min.js" %}"></script>
+
+
+Bunu o vaxt etmek olardi ki, her sehife ucun ferqli CSS stiller, JAVASCRIPT kodlari ve.s tetbiq edilsin. Ancaq, bizim butun web sehifelerimiz ucun eyni CSS, JS kodlari tetbiq edildiyinden
+STATIC qolvugu icinde MAIN yaratmaga ehtiyac yoxdur. 
+
+Ve butun proyekt ucun eyni CSS, JS ve.s tetbiq edileceyinden hemin fayllari MAIN/STATIC icinde yazmaga ehtiyac yoxdur. Eks halda bu kodlar sadece MAIN ucun olacaq. 
+
+
+3) Ne etmeliyik ? CSS, JS ve.s fayllar butun proyekt ucun eyni oldugundan hemin STATIC qovlugunu MAIN qovlugunun xaricinde yəni, proyektin kökündə yerlesdirmek lazimdir. 
+Proyektin kökü MANAGE.PY faylinin oldugu yerdir. 
+
+
+
+NOT: Bu STATIC qovlugun yerini avtomatik olaraq teyin eden kod yerlesir APP/SETTINGS.PY faylinin icinde:    INSTALLED_APPS = [  'django.contrib.staticfiles'  ]
+
+Eger biz STATIC qolvugunu proyektin köküne yaxud her hansisa ferqli bir yerə qoyamq isteyirikse, onda APP/SETTINGS.PY faylinin icinde öz yolumuzu yazmaliyiq:

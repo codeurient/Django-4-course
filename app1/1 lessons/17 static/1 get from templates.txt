@@ -1,0 +1,11 @@
+1. Ilk once frontend maketinin oldugu yerden INDEX.HTML faylini aciriq ve icinden butun html kodlarimizi kopyalayiriq 'main/templates/main/index.html' faylina.
+
+
+2. CSS kodlari sekiller ve.s ilk once olmayacaq. Bunun ucun MAIN qovlugunda STATIC deye bir qovluq yaratmaliyiq. DJANGO avtomatik olaraq hemin qovluqda yerlesen
+static fayllari axtaracaq. Sonra frontend maketinin oldugu yerden DEPS adli qovlugumuzu yerlesdiririk bu STATIC adli qovlugumuzun icinde. 
+
+
+3. Sehifeni yeniledikde hec bir deyisiklik gormeyeceyik cunki proqram hemin DEPS qovlugunu ve icindeki fayllari gormur: <link rel="stylesheet" href="deps/css/my_css.css">
+
+a) DJANGO hemin fayllari avtomatik gorsun deye INDEX.HTML faylinda en yuxarida bele yaziriq:    {% load static %} 
+b) Sonra ise butun linkleri cagirmaq ucun hemin 'static' kodunu istifade edirik:                <link rel="stylesheet" href=" {% load static "deps/css/my_css.css" %} ">
