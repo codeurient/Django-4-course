@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-#! 1) Ilk etmemiz gereken 'goods' sehifesini qeydiyyata almaqdir.
     'goods',
     'main',
 ]
@@ -79,15 +78,28 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+#! 1) DATABASE adli variable-a verilen DICT icinde hal-hazirda hansi DB istifade edildiyi gosterilir. Movcud DB olaraq 'SQLITE3' istifade edilir. Porqrami işə saldiqda, avtomatik olaraq DB.SQLITE3 adinda fayl yaradilir ve
+#! biz butun melumatlari muveqqeti olaraq bu faylda saxlayasiyiq. Ne vaxt ki, proyekti real servere kucereceyik onda, 4 esas DB-den birisini istifade ede bilerik. ( postgresql,  oracle,   mysql,   mariadb ) 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#! 2) Yuxarida saydigimiz DB-ler hamisi mentiqi olaraq eyni işləyir. Cuzi ferqlilikler xaric olmaqla. DB-se melumatlar gondermek ucun SQL sorgular yazmaq lazimdir. Acnaq DJANGO-da bunu etmeye ehtiyac yoxdur cunki DJANGO-da
+#! ORM ( Object-Relational Mapper ) deyilen bir sistem var hansi ki, bu sistem SQL sorgularini avtomatik olaraq verilenler bazası ilə əlaqələndirir. Yəni, ORM sistemi verilənlər bazasına data-ları SQL kamandaları ilə deyil
+#! PYTHON kodları ilə əlavə etmək, çağırmaq, yeniləmək və.s etmək imkanı yaradır. PYTHON classları ilə kod yazırıq ORM sistemi bu kodu SQL kamandası kimi oxuyur və verilənlər bazasına dataları göndərir, yeniləyir və.s.
 
+#! 3) Hal-hazirda elimizde DB.SQLITE3 adinda bir fayl var ve içi bosdur. Mecbur deyil ancaq faylin bos oldugunu ve.s daha rahat gormek ucun (DB Browser for SQLite) istifade etmek olar.  2 nomreli sekilde goreceyimiz kimi bos olacaq. 
 
+#! 4) NOT: Proqrami işə saldıqda terminal pəncərədə şəkil 3dəki kimi bir xəta görürük. Bu mesaj, proqramımızda konfiqurasiya edilməmiş verilənlər bazası olduğunu göstərir. 18 tətbiq olunmamış miqrasiyanız var yazsini gore bilerik. 
+
+#! 5) Nədir bu MİGRATİON ? MODEL deyilen bir fayl var ve bu faylda yazdigimiz kod ile yaratmis oldugumuz cedveli DB-se gondermek ucun MİGRATİON faylinda yazdigimiz koddan istifade edirik. Qisaca: 
+#! MİGRATİON-da yazdığımız kod MODEL-de yaratdığımız cədvəli verilənlər bazasına əlavə edir. 
+
+#! 6) Üç nomreli sekilde olan xetani ona gore aliriq ki, DEFAULT olaraq DB-de bezi cedveller olmalidir ancaq onlar yoxdur ve olmasi ucun bu cedvelleri MIGRATE etmemiz teleb olunur. 
+#! Hemin default olan cedvelleri yaxud indiden sonra ozumuz yaradasi cedvelleri MIGRATE etmek ucun terminalda bele bir kamanda yazmaliyiq: 
+ 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
