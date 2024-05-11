@@ -57,6 +57,10 @@
                                 <li><a class="dropdown-item  text-white" href="carts/cart.html">Cart</a></li>
                                 <li><a class="dropdown-item  text-white" href="users/profile.html">Personal account</a>
                                 </li>
+                                {% comment %}! 1) Admin panele link veririk. Ayrica Admin panel yaratmiriq cunki default olaraq Django-da admin panel movcuddur.                        {% endcomment %}
+                                {% comment %}!    Bu admin paneldən, DB-sə melumatlar əlavə etmək, silmək və yeniləmək kimi əməliyyatları yerinə yetirmək üçün istifadə olunur.         {% endcomment %}
+                                {% comment %}!    Admin panelə giriş etmək üçün AD və ŞİFRƏ lazım olduğu üçün terminalda belə bir kamanda yazırıq:   python manage.py createsuperuser   {% endcomment %}
+                                {% comment %}!    Username: root,            Email: enter,           Password: root                 Y                                                   {% endcomment %}
                                 <li><a class="dropdown-item  text-white" href="{% url "admin:index" %}">Admin panel</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
