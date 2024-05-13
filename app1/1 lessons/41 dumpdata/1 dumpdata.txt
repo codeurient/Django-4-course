@@ -1,0 +1,33 @@
+1. Əgər DB silinərsə bütün məlumatları yenidən manual doldurmaq məcburiyyətində mi qalasıyıq ? Bunun olmaması üçün xüsusi instrumentler, qurğular (fikstura) vardır.
+
+
+
+
+2.
+Birincis:  dumpdata 
+Ikincisi:  loaddata
+
+
+
+
+3. Bu qurğular vasitəsi ilə DB-də olan məlumatları xüsusi JSON faylına yaddaşa yazasıyıq. 
+
+
+
+
+4. İlk öncə FİXTURES adında bir qovluq və bu qovluq içində də GOODS tətbiqi adında qovluq yaradırıq. 
+
+
+
+
+5. Sonra terminalda yaziriq:                                    python manage.py dumpdata goods.Categories > fixtures/goods/cats.json
+Bu  a) GOODS bizim cedvelimizin yerlesdiyi tetbiqimizdir.  
+    b) CATEGORIES ise modelimizin adidir. 
+    c) > bu simvol onu gosterir ki, deyisiklikleri hara yaddasa yazasiyiq. 
+    d) fixtures/goods/cats.json hemin qovluqlarin ve faylin adidir.
+    NOT: bele bir fayl FİXTURES/GOODS qovlugu icinde yoxdur. Ancaq biz terminalda yazaraq ENTER-e basdiqda avtomatik olaraq yaranacaq ve datalar bu fayla hekk olunacaqdir.
+
+
+
+
+6. Eynisini PRODUCTS ucun edirik:    python manage.py dumpdata goods.Products > fixtures/goods/prod.json
