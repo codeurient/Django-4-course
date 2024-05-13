@@ -1,0 +1,44 @@
+1. Bu merhelede    DB.SQLITE3     faylini silirik               - 1 nömrəli şəkilə bax
+
+
+
+
+
+
+
+
+2. Fiksturada olan informasiya model-ə uyğun olmalıdır. Yəni sahələr üst-üstə düşməlidir. Ancaq bəzi cüzi dəyişikliklər edilə bilər. Məsələn GOODS/MODELS.PY faylında: 
+
+Belə yazmışdıq                  -       discount    = models.DecimalField(default=0.00, max_digits=7, decimal_places=2, verbose_name='Discount with %') 
+Dəyişərək belə yaza bilərik     -       discount    = models.DecimalField(default=0.00, max_digits=4, decimal_places=2, verbose_name='Discount with %') 
+
+max_digits=4   etdik. 
+
+
+
+
+
+
+3. Köhnə miqrasiyalarıda silə bilərik.   GOODS/MIGRATIONS    qovluğundan:
+                                                                            0001_initial.py       
+                                                                            0002_alter_categories_options_alter_categories_name_and_more            fayllarınıda silirik. 
+
+
+
+
+
+
+
+4. İndi nə edirik?   DB və MİGRATİONS olmadan onları yenidən yaradırıq. Terminalda yazırıq:
+                                                                                                python manage.py makemigrations
+                                                                                                python manage.py migrate       
+DB-sə indi baxsaq hər şey silinmiş və boş olacaq həmçinin SUPERUSER-də. Onuda yaratmalıyıq      python manage.py createsuperuser
+İndi isə Fiksturadan istifadə edərək DB-si doldururuq                                           python manage.py loaddata fixtures/goods/cats.json
+                                                                                                python manage.py loaddata fixtures/goods/prod.json
+
+
+
+
+
+
+5. Proqramı işə salaraq yoxlayırıq.

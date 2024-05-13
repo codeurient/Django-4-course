@@ -1,3 +1,0 @@
-1. Python
-2. Django
-3. Black formatter

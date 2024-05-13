@@ -1,1 +1,0 @@
-DNS bir komputerdir ve IP adreslerini Sayt adlarina ve Sayt adlarini IP adreslere cevirmek ucun istifade edilir.
