@@ -1,0 +1,52 @@
+1. Bu dərsə qədər sadə sorğular yaratmağı və.s öyrəndik indi isə ORM sistem vasitəsi ilə sorğular yaratmağın daha geniş variantlarına baxasıyıq.
+
+
+2. QuerySet metodu ilə sorğuların birləşdirilməsi və.s kimi hansı SQL sorğular DJANGO tərəfindən həyata keçirilir və.s gözdən keçirəcəyik. 
+
+
+3. Bu sorğuların necə baş verdiyini, ORM sistemin nə yaratdığını görmək üçün bir neçə qayda var. Bunun üçün xarici kitabxanalardan istifadə etməliyik. Çünki DJANGO bu cür
+informasiyaları ehtiva etmir. 
+
+
+4. Bütün kitabxanaları görmək üçün daxil oluruq bu sayta:       https://pypi.org/
+
+
+5. Bizə lazım olan kitabxanın adı belədir:                      django debug toolbar
+
+
+6. Nə kimi özəlliklər verəcək bu kitabxana bizə ? Django Debug Toolbar, cari REQUEST/RESPONSE haqqında müxtəlif məlumatları əks etdirən panellər dəstidir.
+
+
+
+7. Öz sözlərimizlə loru şəkildə deyəsi olsaq:   Biz SQL sorğular yaratmırıq ancaq Django ORM sistemi bizə kömək edir ki, Python ilə yazdığımız kodlar SQL sorğulara çevrilsin.
+                                                Həmin SQL sorğuların nəyə oxşadığını görmək üçün yaxud SQL sorğu yaradılanda harda səhf var, sorğu necə gedir, cavab necə gəlir və.s
+                                                kimi fəaliyyətləri xüsusi açılacaq bir pəncərədə müşahidə edə bilmək üçün bu kitabxanadan istifadə edəcəyik.
+
+
+
+8. terminalda yazırıq:                          sudo pip install django-debug-toolbar
+
+
+
+9. Yüklənmə tamamlandıqdan sonra APP qovluğundakı SETTİNGS.PY faylını açırıq. Çünki İNSATLL etdiyimiz paketi bu fayl içində konfiqurasiya etməliyik. 
+
+   Saytda bele bir link olacaq:  https://django-debug-toolbar.readthedocs.io/.                  Bu linke daxil olmaq lazimdir. 
+
+   Açılan pəncərədə İNSTALLATİON sözünə basırıq. Bu səhifədə SETTİNGS.PY faylını necə konfiqurasiya etməmiz parədə yazılıbdır. 
+
+   Bizdə hal-hazırda əksik olan hissə "debug_toolbar" hissəsidir, çünki INSTALLED_APPS dəyişkəninə baxdıqda görürük ki, həmin lazım olan hissə bizdə yoxdur. 
+
+   Gedirik və yazırıq INSTALLED_APPS içində əksik olan "debug_toolbar" hissəni. 
+
+
+
+10. İkinci olaraq 'APP/URLS.PY' faylında 'URLPATTERNS' içinə bunu əlavə etməliyik deyə yazılıbdır saytda:     path("__debug__/", include("debug_toolbar.urls"))
+    Biz bunu bir balaca fərqli əlavə edəcəyik. İF sorğu yaradaraq. 
+
+   
+
+11. Sonra SETTİNGS.PY faylının içində MIDDLEWARE hissəyə əlavə edirik:                  "debug_toolbar.middleware.DebugToolbarMiddleware",
+
+
+
+12. Ən sonda isə SETTİNGS.PY faylına ən altda bir yerlərə bu listi əlavə edirik:         INTERNAL_IPS = [    "127.0.0.1",    ]                  FINISHED (proqramı işə salmaq olar)
