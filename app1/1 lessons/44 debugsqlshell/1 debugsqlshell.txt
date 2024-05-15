@@ -1,0 +1,93 @@
+1) 44cu dersde endirdiyimiz DEBUG kitabxanasinin DEBUGSQLSHELL kamandi movcuddur. Bu kamanda vasitesi ile SQL sorgulari ve xetalarini
+   terminal pencerede gore bilerik. 
+
+    DEBUGSQLSHELL kamandindan istifade etmek ucun terminalda yaziriq:            python manage.py debugsqlshell
+
+
+
+
+2) Sonra ise Model-imizi import ederek bir neçə sade SORĞULAR yaradiriq: 
+
+In [1]:  from goods.models import Products        
+In [2]:  Products.objects.all()                               
+In [3]:  Products.objects.filter(id=2)                        
+In [4]:  Products.objects.order('price')                                                                     - artandan azalana 
+In [5]:  Products.objects.order('-price')                                                                    - azalandan artana
+In [6]:  Products.objects.filter(price__lt=300).order('price')                                               - LT sozunun menasi LESS THAN demekdir. Yəni qiyməti 300 dən kiçik 
+                                                                                                                olanları artandan-azalana dogru sirala.
+In [7]:  Products.objects.filter(price__lt=300) & Products.objects.filter(price__gt=100)                     - & bu simvol ilə 2 sorğu gərçəkləşdirə bilirik. 300dən kiçik VƏ 100dən böyük demişik.
+In [8]:  Products.objects.filter(price__lt=300) & Products.objects.filter(price__gt=100).order_by(-price)    - 300dən kiçik VƏ 100dən böyük ancaq azalan sıra ilə demişik
+In [9]:  Products.objects.filter(price__lt=300).filter(price__gt=100).order_by(-price)                       - 7 ve 9ci sorğulari daha da qısaldaraq bu cür yaza bilərik
+In [10]: Products.objects.order_by(-price).filter(price__lt=300).filter(price__gt=100)                       - order_by() metodunu başa keçirərək 7, 8 və 9cu sorğuların eynisi bu cür yazmaq olar.
+In [11]: Products.objects.filter(price__lt=50) | Products.objects.filter(description__contains='table')      - | bu simvol eyni vaxtda ferqli kriterlere gore axtaris etmek istedikde istifade edilir
+                                                                                                                 yəni, ya qiymətə görə yaxud içində 'table' sözünü contains edən description-a görə filtirle deyirik.
+
+
+
+3) Bizim PRODUCT cedvelinde CATEGORY adinda sahə (sütun) var. Bu sütun Xarici Açardır (FK) və bizi digər CATEGORY cədvəli ilə bağlayır. Necə filtirləmək lazımdır ki, müəyyən KATEQORİYAYA uyğun gələn
+məhsulları əldə edək ?
+
+In [12]: Products.objects.filter(category__id=7)                                                             - CATEGORY cedvelinde, İD-si 7 olan məhsulu yaxud məhsulları əldə edirik. Bir kateqoriyaya bir neçə
+                                                                                                               məhsul aid ola bilər. PRODUCT cedvelinin category sahesi CATEGORY cedveli ile bagli oldugundan 
+                                                                                                               __id prefiksini category sahesine elave etdikde movcud identifikatora uygun gelen mehsullari elde
+                                                                                                               etmisik oluruq.
+
+
+
+In [13]: Products.objects.filter(category_id=7).order_by('price')                                            - Altdan 2 düz xətt çəkərək İD yazdıqda ancaq bunu altdan 1 düz xətt çəkərəkdə yaza bilərdik. Bu hal
+                                                                                                               istisna olaraq sadəcə İD üçün keçərlidir. Yəni SLUG və.s üçün yox. 
+
+
+
+In [14]: Products.objects.filter(category__slug='decor').order_by('price')                                   - PRODUCT cedvelinin 'category' sahesi CATEGORY cedveli ile bagli oldugundan __slug yazdiqda hemin
+                                                                                                               slug-a uygun gelen mehsulu elde edirik. Biz her mehsul elave etdikde 7 kateqoriyadan birini secirik.
+                                                                                                               Hemin unikal olan CATEGORY slug-i mueyyen mehsulu ehtiva etdiyinden category__slug yazaraq bu 
+                                                                                                               kateqoriyaya uygun gelen mehsulu elde ede bilirik.
+
+
+
+In [15]: goods = Products.objects.filter(category_id='decor').order_by('price')                              - 'goods' adında variable yaradırıq və ifadəmizi həmin variable içinə yerləşdiririk. Entere basdiqda 
+In [16]: goods                                                                                                  DB-sə heç bir sorğu getməyəckdir. Nə vaxtki, bu variable adını yazaraq ENTERE basarıq onda həmin 
+                                                                                                                variable içində olan dəyəri əldə edəcəyik. Buna DJANGO-nun DB-sə olan TƏNBƏL sorğusu deyirlər 
+                                                                                                                ( LAZY REQUEST ).                                                                 
+ 
+
+
+In [17]: goods.exists()                                                                                      - REQUEST etdikden sonra geri RESPONSE geldikde, her hansisa bir melumat əldə edə bildik mi, bilmədik mi
+                                                                                                              yoxlamaq lazım gəlir. Bunu yoxlamaq üçün də EXİSTS() adlı metoddan istifadə edilir. Əgər boş QUERYSET
+                                                                                                              qayıtmadısa TRUE əks halda FALSE əldə edirik.
+
+
+
+
+In [18]: x = goods[0]                                                                                        - QUERYSET bir LIST oldugu ucun deyerleri elde etmek ucun indekslerden istifade etmeliyik. Elde etdiyimiz
+                                                                                                               deyeri X yaxud her hansisa adda bir VARIABLE icine qoyaq bileri: 
+                                                                                                               
+                                                                                                               Netice: <Products: Bedside table 2 Quantity: 4>
+                                                                                                                        
+
+
+
+
+In [18]: x.name                                                                                              - 18 nomrede oldugu kimi yazaraq ENTERE basdiqda bulari elde edirik:               
+                                                                                                               SELECT  "product"."id",
+                                                                                                                       "product"."name",
+                                                                                                                       "product"."slug",  ve.s. Artiq 'x.name' yazaraq istediyimiz sahenin deyerini elde ede bilerik  
+
+                                                                                                                Netice: Bedside table 2'
+
+
+In [21]: for i in goods:                                                                                     - FOR dongusu ile GOODS icinden butun melumatlari bu cur elde ete bilerik.
+    ...:     print(i.name)                              
+    ...:     print(i.price)                                                                                   Netice: Bedside table 2
+    ...:                                                                                                              25.00    
+
+                                                                                                                      Double bed
+                                                                                                                      670.00
+
+
+
+
+
+
+Bura qeder praktika kifayetdir. Indi gedek Controller-e (VIEW) ve DB-den melumatlari cagiraq. 
