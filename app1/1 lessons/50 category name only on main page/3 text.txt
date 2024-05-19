@@ -1,0 +1,52 @@
+
+1) Kateqoriler bütün səhifələrdə görsənməlidir. 2 nömrəli şəkildə MAİN və GOODS kontrollerlərinin müqayisəsini gördük. 
+
+Ancaq MAİN-də olduğu kimi eyni kodu     'categories = Categories.objects.all()'       GOOD içində yazmaq doğru olmayacaq. Çünki bu səfərdə
+kateqorilər həm MAİN həmdə GOODS-da olacaq ancaq digər səhifələrdə olmayacaq və yenə məcbur olasıyıq həmin kodu digər səhifələr üçündə əlavə
+etməyə. Buda təkrara səbəb olacaq.
+
+
+
+
+
+2) Bunu həll etmək üçün ayrıca bir fayl yaradaraq bu kodu həmin faylda bir funksiya içində qoymaq olar:  categories = Categories.objects.all()
+Sonra həmin funksiyanı digər fayllarda İMPORT edərək çağırsaq istədiyimiz nəticəni əldə edəcəyik. Bu zaman funksiyanı təkrarlamış oluruq.
+
+
+
+
+
+3) Başqa variant:  Deməli yada salaqki, Django ŞABLON tag-lərə sahibdir. Məsələn:   {% if %},    {% for %}   və.s
+
+Bizdə öz şəxsi ŞABLON tag-lərimizi yarada bilərik. STATIC kimi:     <img src="{% static "deps/icons/image.svg" %}" >  
+
+Bu STATIC django proqramistleri terefinden yaradilan funksiyadir. Bizde bu cur öz ŞABLON  tag-lərimizi yarad bilərik. 
+
+Bu şablon tag-ləri hansısa bir səhifəyə (tətbiqə) məxsus olmalıdır. Əgər həmin şablon tag-i məhsulların kateqoriyaları haqqındadırsa, onda bu şablon tag-i yerləşməlidir GOODS qovluğu içidə.
+
+
+
+
+
+
+4) Şablon tag-ləri yaradanda mütləq bu adda qovluq və fayl yaratmaq lazımdır:    TEMPLATETAGS/__INIT__.PY 
+
+Artıq həmin TEMPLATETAGS qovluğunun içində ŞABLON TAG-ləri kimi istifadə ediləcək python fayllarını yarada bilərik. Ad olaraq istənilən ad vermək olar. Məsələn: goods_tags.py
+
+
+
+
+5) İndi  MAIN/VIEWS.PY  faylından bu kodları silirik:
+                                                        a) categories = Categories.objects.all()
+                                                        b) 'categories' : categories,
+
+
+
+
+6) Sonra isə   GOODS/TEMPLATETAGS/GOODS_TAGS.PY    faylında öz funksiyamızı yazırıq.   Daha ətraflı həmin faylda.......
+
+
+
+
+
+

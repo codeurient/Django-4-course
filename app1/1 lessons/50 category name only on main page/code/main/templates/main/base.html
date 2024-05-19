@@ -1,5 +1,5 @@
 {% load static %}
-{% load goods_tags %} 
+{% load goods_tags %}  <!--   1)   İlk öncə şablon tag-imizi LOAD edirik. Bu FAYL-ımızın adıdır. Həmin faylda olan funksiyanı (Şablon tag-i) aşağıda çağırırıq.   -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,12 +86,16 @@
                         <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
                             height="16">
                     </button>
+
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+                        {% comment %}! 1) Indi isə öz ŞABLON TAG-imizə (funksiya) müraciət edərək kateqorilərimizi yazdıra bilərik.  {% endcomment %}
+                        {% comment %}!    tag_categories() funksiyasinin RETURN etdiyi kateqorileri CATEGORIES kimi (as) əldə edirik və FOR şablon tag-i ilə ekrana yazdırıq. {% endcomment %}
                         {% tag_categories as categories %}
                         {% for category in categories %}
                             <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}">{{ category.name }}</a></li>
                         {% endfor %}      
                     </ul>
+
                 </div>
                 <!-- Cart icon, opens a modal window -->
                 <div>
