@@ -1,0 +1,1 @@
+Sonra ID ile elaqeli URL haqqinda olan bolmeni silirik. Sadece SLUG qalsin kifayetdir.
