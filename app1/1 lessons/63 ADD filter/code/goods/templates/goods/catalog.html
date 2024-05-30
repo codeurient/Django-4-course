@@ -1,0 +1,125 @@
+{% extends "main/base.html" %} 
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="dropdown mb-2">
+            <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Фильтры
+            </button>
+    
+            <form action="" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark">
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="checkbox" name="on_sale" id="flexCheckDefault" value="on">
+                    <input type="hidden" name="q" value="request.GET.q">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Товары по акции
+                    </label>
+                </div>
+                <p class="text-white mx-3 mt-3">Сортировать:</p>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault1" value="default" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        По умолчанию
+                    </label>
+                </div>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault2" value="price">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        От дешевых к дорогим
+                    </label>
+                </div>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault3" value="-price">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        От дорогих к дешевым
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button>
+            </form>
+        </div>
+        {% for product in goods %}
+            <div class="col-lg-4 col-md-6 p-4">
+                <div class="card border-primary rounded custom-shadow">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static "deps/images/Not found image.png" %}" class="card-img-top" alt="">
+                    {% endif %}
+                    <div class="card-body">
+                        <a href="{% url "catalog:product" product.slug %}">
+                            <p class="card-title">{{ product.name }}</p>
+                        </a>
+
+                        <p class="card-text text-truncate">{{ product.description }}</p>
+                        <p class="product_id">id: {{ product.display_id }}</p>
+                        <div class="d-flex justify-content-between">
+                          
+                           {% if product.discount %}
+                                <p><s>{{ product.price  }}</s> $</p>
+                                <p><strong>{{ product.sell_price }} $</strong></p>
+                                <span class="badge bg-warning text-dark">Discount {{ product.discount }} %</span>
+                            {% else %}
+                                <p><strong>{{ product.price }} $</strong></p>
+                           {% endif %}
+                            <a href="#" class="btn add-to-cart">
+                                <img class="mx-1" src="{% static "deps/icons/cart-plus.svg" %}" alt="Catalog Icon"
+                                    width="32" height="32">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center my-4">
+            <div class="custom-shadow d-flex">
+                <li class="page-item {% if not goods.has_previous %} disabled {% endif %}"> 
+                    <a class="page-link"        href="{% if goods.has_previous %}                  {% url "catalog:index" slug_url goods.previous_page_number %}                    {% else %}  #              {% endif %}"    >Previous</a>
+                </li>
+
+               
+                {% for page in goods.paginator.page_range %}
+
+{% comment %}  1) Əgər 50 səhifə varsa bu paginator hissəsində 50 ədəd görəcəyimiz mənasına gəlir.                                                                                                                             {% endcomment %}
+{% comment %}     Məsələn: 1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50       {% endcomment %}
+
+{% comment %}     Bu daha da çox ola bilərdi. Bu cür uzun bir paginator yaranmaması üçün nə etməliyik? Məsələn aşağıdakı kimi bir paginator necə formalaşdıra bilərik:                                                         {% endcomment %}
+
+{% comment %}     1        2       3        4                   - Eger 4 bolmelik paginator olarsa ve 4cu  sehifedeyikse onda 3,2,1    gorsenecek                                                                              {% endcomment %}
+{% comment %}     2        3       4        5                   - Eger 4 bolmelik paginator olarsa ve 5ci  sehifedeyikse onda 4,3,2    gorsensin   1 gizlensin                                                                 {% endcomment %}
+{% comment %}     12       13      14       15                  - Eger 4 bolmelik paginator olarsa ve 15ci sehifedeyikse onda 14,13,12 gorsensin   12 den asagi olanlar gizlensin                                              {% endcomment %}
+{% comment %}                                                                                                                                                                       ve.s                                       {% endcomment %}
+
+{% comment %}      Bunun ucun IF konstruktorundan istifade ede bilerik:         {% if page >= goods.number - 2 and page <= goods.number + 2 %}           - Ancaq bele yazdiqda xeta aliriq.                                    {% endcomment %}
+
+{% comment %}      Cunki hal-hazırda biz şablonda yerləşirik və şablonda toplama, çıxma və.s etmək olmur. Bunu edə bilmək üçün isə xüsusi FİLTER-lər vardır:  https://docs.djangoproject.com/en/5.0/ref/templates/builtins/    {% endcomment %}
+
+{% comment %}      Bizə lazım olan filterin adı ADD filteridir. String ile istifade edildikde birlesdirir ededler ile istifade edildikde toplayir.                                                                             {% endcomment %}
+
+                    {% if page >= goods.number|add:-2 and page <= goods.number|add:2 %}
+                        <li class="page-item {% if goods.number == page %} active {% endif %}">
+                            <a class="page-link" href="{% url "catalog:index" slug_url page %}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                    
+                {% endfor %}
+                
+                <li class="page-item {% if not goods.has_next %} disabled {% endif %}"> 
+                    <a class="page-link"        href="{% if goods.has_next %}                  {% url "catalog:index" slug_url goods.next_page_number %}                    {% else %}  #              {% endif %}"    >Next</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+{% endblock content %}
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
+        </div>
+    </footer>
+{% endblock footer %}
