@@ -5,6 +5,7 @@ from goods.models import Products
 
 def catalog(request, category_slug):
     page     = request.GET.get('page', 1)
+    # 1) Bunu yoxlamaq üçün Kontrol Noqtesi teyin edirik ve proqrami işə salırıq. Proqrami işə saldıqdan sonra Sayta gedirik və APPLY deyirik.
     test  = request.GET.get('test', None)
     test = request.GET.get('test', None)
 
