@@ -17,7 +17,7 @@ def catalog(request, category_slug = None):
     elif query:
         # 2) SEARCH ile məhsullarə FILTER-ləmək üçün çox kod yazmaq lazım gəldiyindən, kodları başqa bir fayl içində yazaraq həmin faylı VIEWS.PY faylına İMPORT etmək daha məsləhətə uyğundur. Bunun üçün ilk öncə GOODS/UTILS.PY adında başqa
         #    bir fayl yaradırıq. Bu faylın içində Q_SEARCH(query) adlı bir funksiyamız olacaq və 'QUERY' parametrini qəbul edərək məhsulları filter-ləyəcək. Filterlənən məhsullar GOODS variable-ına yerləşdirilərək, şablona göndəriləcək.
-        goods = q_search()(query)
+        goods = q_search(query)
     else:
         goods = get_list_or_404(Products.objects.filter(category__slug = category_slug))
 
