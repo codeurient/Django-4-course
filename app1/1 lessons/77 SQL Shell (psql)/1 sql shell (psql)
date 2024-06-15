@@ -1,0 +1,44 @@
+1. Öz DB-zimizi yaratmaq üçün 2 yol vardir. 
+
+a) komputerdə qurasdirili olan SQL Shell (psql) proqrami - Şəkil nömrə 2də həmin proqrami görə bilərik:
+   Bu proqrami işə saldiqda bizdən şəkil nömrə 2-2-də olduğu kimi bəzi suallarii cavablamağimizi istəyəcək: 
+                                                                                                            Server [localhost]: 
+                                                                                                            Database [postgres]: 
+                                                                                                            Port [5432]: 
+                                                                                                            Username [postgres]: 
+                                                                                                            Password for user postgres: 
+
+    Her sualda Enter duymesini klikleyerik parol yerine catdiqda da ROOT ayzaraq Entere basiriq ve POSTGRES verilenler bazasina daxil oluruq:  postgres=# 
+
+
+b) Komputerin daxili terminal pəncərəsi. 
+   Biz SQL Shell (psql) proqramindan istifadə edəcəyik. 
+
+
+
+2. Biz bizim proyektimizə uyğun olan yeni DB yaradacağiq. Bizə POSTGRES gərəkli deyildir. Ancaq öz DB-zimi yaratmadan öncə şəkil 3-n də görüldüyü kimi LOGİN yaratmaliyiq. 
+    a) Create login deyirik
+    b) General    - ad olara 'home' yaziriq. Istenilen ad vermek olar. 
+    c) Definition - parol olaraq 'home' yaziriq. Istenilen parolu vermek olar.
+    d) Privileges - sekilde gorulduyu kimi secirik.
+    e) Membership - toxunmuruq oldugu kimi qalir
+    f) Parameters - toxunmuruq oldugu kimi qalir
+    g) Security   - toxunmuruq oldugu kimi qalir
+    h) SQL        - toxunmuruq oldugu kimi qalir. Burda bezi SQL kamandalar goreceyik. Eger bu kamandani 'SQL Shell' terminalinda yazsaydiq netice olaraq eyni neticeni elde edecekdik.  SAVE deyirik.
+
+
+
+
+3. Ucuncu merhele olaraq DB-zimi yaradaq. Sekiller 4-n.
+    a) Create Database deyirik
+    b) General    - DB-se ad veririk. Meselen 'home'. Owner olaraqda 'home' olacaq deyirik. Yeni bayaq yaratdigimiz 'home' adli USER 'home' adli DB-in sahibidir.
+    c) Definition - Encoding UTF8 olaraq qalmalidir. 
+    d) Security   - toxunmuruq oldugu kimi qalir
+    e) Parameters - toxunmuruq oldugu kimi qalir
+    f) Advanced   - toxunmuruq oldugu kimi qalir
+    g) SQL        - toxunmuruq oldugu kimi qalir. SAVE deyirik.
+
+    h) Ve sonda 4-4 nomreli sekilde neticeni gore bilerik. DB yaradildi ancaq TABLE heleki boşdur. Cunki, MIGRATION etdikden sonra cedvel dolacaq.
+    
+    
+4. Artiq 'pg Admin 4' ve 'SQL Shell (psql)' proqramlarini baglayaraq VSC-da kecid ede bilerik.  

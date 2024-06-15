@@ -21,12 +21,15 @@ Ikincisi:  loaddata
 
 
 5. Sonra terminalda yaziriq:                                    python manage.py dumpdata goods.Categories > fixtures/goods/cats.json
-Bu  a) GOODS bizim cedvelimizin yerlesdiyi tetbiqimizdir.  
-    b) CATEGORIES ise modelimizin adidir. 
+Bu  a) GOODS bizim cedvelimizin yerlesdiyi tetbiqimizdir.  Qovluq nəzərdə tutulur.
+    b) CATEGORIES ise modelimizin adidir.                  Goods qovluğunun içindəki MODELS.PY faylında olan Categories() metodu nəzərdə tutulur.
     c) > bu simvol onu gosterir ki, deyisiklikleri hara yaddasa yazasiyiq. 
     d) fixtures/goods/cats.json hemin qovluqlarin ve faylin adidir.
     NOT: bele bir fayl FİXTURES/GOODS qovlugu icinde yoxdur. Ancaq biz terminalda yazaraq ENTER-e basdiqda avtomatik olaraq yaranacaq ve datalar bu fayla hekk olunacaqdir.
 
+
+Proqram hardan bilirki Goods qovlugundaki Categories() metodunu nezerde tuturuk ? DUMPDATA sayəsində. DUMPDATA fiksturasi bunu APP/SETTINGS.PY faylindaki INSTALLED_APPS = [] listini görərək avtomatik olaraq başa düşür ki,
+söhbət hansı qovluqdan hansı modelden hansı funksiyadan gedir.
 
 
 
