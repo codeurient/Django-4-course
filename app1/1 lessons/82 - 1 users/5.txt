@@ -1,0 +1,1 @@
+1) İndi daxil oluruq     USERS    qovluğunda yerləşən     URLS.PY     faylına

@@ -1,0 +1,1 @@
+1) Indi daxil oluruq    templates-for-Django-4-course-Home-main    qovluğuna və html şablon kodlarını götürərərk həmin faylların içinə yerləşdiririk. (login, registration və profile)

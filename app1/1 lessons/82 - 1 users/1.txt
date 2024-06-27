@@ -1,0 +1,12 @@
+1) Istifadeciler adinda qovluq yaratmaq ucun terminalda yaziriq:     python manage.py startapp users 
+
+
+Yəni istifadəçi dedikdə sayta daxil olmaq üçün istifadə ediləcək səhifəni yaradırıq. İstifadəçilər qeydiyyatdan keçə bilsinlər deyə. 
+
+
+2) Sonra daxil oluruq APP/SETTINGS.py faylina ve hemin yaratdigimiz 'USERS' adli qovlugu qeydiyyata aliriq :
+                                                                                                                INSTALLED_APPS = [
+                                                                                                                    'goods',
+                                                                                                                    'main',
+                                                                                                                    'users',
+                                                                                                                ]

@@ -1,0 +1,13 @@
+1) Sonra daxil oluruq   templates-for-Django-4-course-Home-main   qovlugundaki    USERS    qovluguna. 
+
+
+
+2) Sonra tetbiqimizde yaratmis oldugumuz    USERS    qovlugunun icinde    TEMPLATES/USERS   adında qovluq yaradırıq. 
+
+
+3) Və bu    USERS      qovluğumuzda     eksik olan bir fayl daha var. Onuda yaradiriq:        urls.py   
+
+
+
+
+4) Sonra açırıq     APP     qovluğunda olan       URLS.PY    faylını açaraq       USERS      şablonu üçün marşrut əlavə edirik 

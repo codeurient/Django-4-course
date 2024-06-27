@@ -1,0 +1,9 @@
+1)  USERS - TEMPLATES - USERS qovlugunda, şablon üçün 3 dene fayl yaradırıq:
+                                                                              login.html
+                                                                              registration.html
+                                                                              profile.html
+
+
+
+
+2) Sonra bu şablon adlarını yazırıq,   VIEWS.PY    controller-indəki    RENDER()    funskiyasının 2ci parametrinə.

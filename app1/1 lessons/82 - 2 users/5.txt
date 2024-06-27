@@ -1,0 +1,1 @@
+1) İlk öncə xarici LOGİN.HTML faylını açırıq və lazım olan hissəni ordan götürərək yerləşdiririk daxili LOGİN.HTML faylına
