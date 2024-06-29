@@ -1,0 +1,17 @@
+1) Yerdə qalan cədvəllər AUTH_USER dən asılı idilər deyə digər bütün AUTH olan cədvəlləridə tək-tək silmək lazımdır çünki onların tərkibində AUTH_USER cədvəlinə bağlı olan FOREİGN KEY vardır.
+
+
+Ancaq bu proses uzun vaxt aparacağı üçün, ən yaxşısı      HOME      db-nin üzərində mausun sağ düyməsini klikləyərək     DELETE FORCE      deməkdir. 
+
+
+SİLİNDİ !!!
+
+
+
+2) İndi isə, DATABASE sözünün üzərində mausun sağ düyməsini basaraq CREATE -> DATABASE deyərək ilk öncə DB-si yaradırıq. 
+
+
+GENERAL bolmesinde yaziriq  Database - HOME 
+                            Owner    - HOME
+
+Diger DEFINITION, SECURITY, PARAMETRS, ADVANCED, SQL bolmelerine toxumadan SAVE deyirik.  DB yarandi ve TABLE hal-hazirda bosdur.

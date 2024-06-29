@@ -1,0 +1,28 @@
+1)  İlk öncə PD ADMİN 4 ayarlarında bəzi dəyişikliklər edək. 
+
+
+
+
+2) Daxil oluruq  PREFERENCES  bölməsinə
+
+
+
+
+3) Açılan pəncərəni sol tərəfdən biraz aşağıda sürüşdürərərk  QUERY TOOL  içindən   AUTO COMPLETİON  yazısına klikləyirik və AUTOCOMP
+
+
+
+
+
+4) Sonra   QUERY TOOL  içindən   OPTİONS  yazısına klikləyirik və əgər    AUTO COMMİT   sönülüdürsə onu aktivləşdiririk................ SAVE edirik və çıxırq ayarlardan.
+
+
+
+
+
+5) Sonra  QUERY TOOL ilə açdığımız pəncərədə növbəti kodu yazaraq PLAY düyməsini klikləyirik və test edirik ki, bu sistem necə işləyir:
+                                                                                                                                             SELECT * from product where price < 50;
+Nəticəni 5 nömrəli şəkildə görə bilərik. Nöqtəli vergülü unutmaq olmaz.
+
+
+

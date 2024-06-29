@@ -1,0 +1,42 @@
+1) Indi daxil oluruq   'pgADMIN 4' proqramina ki   DB ile isleyek biraz. 
+
+
+
+2) Proqrama daxil olduqda 'postgres'  ucun parol isteyecek. Diqqet edirik bu hisseye cunki bizim yaratdigimiz HOME ucun yox 'POSTGRES' ucun parol teleb edir. PAROL proqrami qurasdirdiqda
+ne teyin etmisdikse hemin paroldur. Mesel ucun men ROOT yazmisdim.
+
+
+3) Bizim cedvelimizin adı:  HOME-dur. Daxil oluruq  HOME -> SCHEMAS -> TABLES bolmesine ve orda 'AUTH_USER' adinda cedvel goreceyik. Sayta Daxil olmaq yaxud Qeydiyyatdan kecmek ucun bize 
+lazim olanda elə bu cədvəldir. 
+
+
+4) Cedveldeki istifadecileri gormek ucun hemin    'AUTH_USER'    sözünün üzərində mausun sağ düyməsini basiriq və  'VIEW/EDIT DATA'  bölməsindən   'ALL ROWS'    yazısını seçirik.
+Belelikle 2 nomreli sekilde oldugu kimi bir goruntu qarsimiza cixacaq. Hal-hazirda sadece 1 istifadeci var. 
+
+
+
+
+5) Burda tanış olmamız gərəkən Cedvelin SÜTUNLARI-dir. Bu sutunlar bize sonra lazim olacaq. Meselen bu cedvelde PHOTO ucun bir sütun yoxdur. Deməli özümüz əlavə etməliyik. 
+Yaxud TELEFON NPMRƏ üçün, yaxud ADRES üçün sütun və.s kimi lazım ola biləcək bəzi sütunlar yoxdursa deməli bunları özümüz əlavə etməliyik. 
+
+
+
+
+
+
+6) Bunun üçün bir neçə variantımız var. Məsələn
+                                                a) Yeni cədvəl yaratmaq
+                                                b) Mövcud cədvəli redakdə etmək. ( Məsləhətdir ki mövcud olanı redakde edək.)
+
+
+
+7) Əgər yeni cədvəl yaratmaq istəsəydik onda mövcud cədvəli silmək üçün 'AUTH_USER' üzərində mausun sağ düyməsini basaraq DELETE sözünü seçəcəkdik.
+
+
+
+
+8) Yaxud SQL kamandaları ilə cədvəl yaratmaq istəsəyik onda,  HOME  db-sinin üzərində mausun sağ düyməsini basaraq ən aşağıda yerləşən    'QUERY TOOL'     yazısını seçməliyik. 
+   Açılan pəncərədə yuxarıda SQL kamandaları yazacağdıq və aşağıda nəticəni görəcəkdik. 4 nomreli sekilde oldugu kimi.
+
+
+

@@ -1,0 +1,18 @@
+1) Yaxud bu kamandanı yazaraq cədvəli silə bilərik:
+                                                        DROP table auth_user;
+
+Ancaq burda xeta alacağıq və cədvəl silinməyəcək çünki digər AUTH_GROUP və.s kimi cədvəllərin hamısı AUTH_USER cədvəlindən asılıdılar. 
+
+
+Ən aşağıda isə belə bir yazı görərik:    Hint: Use DROP ... CASCADE to drop the dependent objects too.
+
+
+Yəni, asılı olan obektləridə silmək üçün CASCADE kamandından istifadə edin: 
+                                                                            DROP table auth_user CASCADE;
+
+Bu kamandanı yazaraq AUTH_USER cədvəlini silirik. Və REFRESH etdikde görerik ki, yerdə 11 cədvəl qalacaq. 
+
+
+
+
+
