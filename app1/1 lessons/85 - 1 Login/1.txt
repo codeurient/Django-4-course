@@ -1,0 +1,4 @@
+1) İndi isə LOGİN və QEYDİYYAT üçün lazım olan kodlarımızı yazacağıq.
+
+
+2) Açırıq ilk öncə     USER - TEMPLATES - LOGİN.HTML      faylını. 

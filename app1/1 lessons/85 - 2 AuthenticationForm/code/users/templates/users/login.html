@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 bg-white p-4 mb-4 mx-3 rounded custom-shadow">
+                    <h2 class="text-center mb-4">Authorization</h2>
+                    <form action="{% url "user:login" %}">
+                        {% comment %} 
+
+                                1) Aşağıdakı HTML tag-lərini kommentə alırıq və placeholder ilə FORM xassəsini çağırırıq. Sonra proqramı işə salaraq nəticəyə baxa bilərik. Deməli, nəticə olaraq 2 İNPUT tag-i görəcəyik. 
+                                   2 nömrəli şəkildə olduğu kimi. Qısa özət:
+
+                                   a) USER/MODELS.PY    faylında   USER()   adında klas yaratdıq. Bu klas DJANGO-nun default olan daxili klasıdır. 
+                                   b) USER(AbstractUser) klası  ABSTRACTUSER adlı django klasını izləsin dedik.
+                                   c) ABSTRACTUSER adlı daxili klasın işi, mövcud istifadəçi modelini genişləndirməkdir. Mövcud istifadə modeli isə USER() klasıdır.
+                                   d) ABSTRACTUSER klası ilə sıfırdan yazmağa ehtiyac qalmadan DB-sə İMAGE sahəsini əlavə etdik.
+
+                                   e) FORMS.PY faylını yaratdıq. Bu faylda 'UserLoginForm()' adında bir klas yaradaraq ona 'AuthenticationForm' adlı klası izləməsini dedik. 'UserLoginForm()' klası içində
+                                      USER() model-imizi İMPORT etdik. Hal-hazirda sadece USER() modeilimizi IMPORT etmisik ancaq həmin model hələki heçnə etmir. Yəni onu silsək belə kodumuz işləyəcək.
+                                      Sonra nəsə edəcəyik onunla. 
+                                      
+                                      İndilik gördüyümüz iş odur ki, 'AuthenticationForm' klasından istifadə edərək, DJANGO-nun istifadəçi girişi üçün tələb olunan USERNAME və PASSWORD sahələrini veb səhifəyə
+                                      avtomatik olaraq əlavə edək. Yəni biz özümüz İNPUT tag-ləri yaratmırıq. DJANGO özü bu klasdan istifadə edərək onları avto əlavə edir. 
+
+                                      AuthenticationForm, Django'nun hazır kimlik doğrulama formudur. USERNAME ve PASSWORD sahələrini ehtiva edir.
+
+                                   f) USER/VIEWS.PY faylına UserLoginForm() klasını İMPORT edirik və LOGİN() metodunda 'form' adlı variable onu verərək çağırırıq. Sonra bu  'form'   adlı variable-ı göndəririk 
+                                      CONTEXT-ə və onuda ŞABLON-a.  
+
+                        {% endcomment %}
+                        {{ form }}
+                        {% comment %} <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                            </div> 
+                        {% endcomment %}
+                        <button type="submit" class="btn btn-dark btn-block">Login</button> 
+                    </form>
+                    <div class="mt-3">
+                        <a href="#">Forget password?</a> | <a href="{% url "user:registration" %}">Create account</a>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p>Or log in via:</p>
+                        <a href="#" class="btn btn-dark">
+                            <img class="mx-1" src="{% static "deps/icons/google.svg" %}" alt="Catalog Icon" width="16" height="16"> Google
+                        </a>
+                        <a href="#" class="btn btn-dark">
+                            <img class="mx-1" src="{% static "deps/icons/facebook.svg" %}" alt="Catalog Icon" width="16" height="16"> Facebook
+                        </a>
+                        <a href="#" class="btn btn-dark">
+                            <img class="mx-1" src="{% static "deps/icons/github.svg" %}" alt="Catalog Icon" width="16" height="16"> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}

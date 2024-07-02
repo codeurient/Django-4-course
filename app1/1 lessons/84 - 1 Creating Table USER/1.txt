@@ -1,0 +1,1 @@
+1) Indi daxil oluruq USERS qovlugundaki MODELS.PY faylina ki, USER MODEL-ini yenidən formalaşdıraq.  
