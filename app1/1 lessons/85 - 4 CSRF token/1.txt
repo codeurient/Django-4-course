@@ -1,0 +1,15 @@
+1) CSRF token mühüm gizli məlumatların şifrələnərək göndərilməsi üçün istifadə edilən qaydadır. 
+
+
+FORM elementlerində çox vaxt istifadə edilir. Bunun üçün həmin FORM tag-inin içində gizli İNPUT tag-i yaradılır:   <input type='hidden'>
+və həmin CSRF token bu gizli İNPUT tag-inin içində saxlanılır. 
+
+
+İstifadə hər dəfə LOGİN daxil etdikdə bu CSRF tokendə hər dəfə yenidən yaradılır və controller-ə göndərilir. Bunun olma səbəbi isə onun üçündür ki, saytı və istifadəçi məlumatlarını
+hücumlardan müdafi edək. 
+
+
+
+
+
+2) Keçirik ilk öncə     USERS/TEMPLATES/USERS/LOGIN.HTML      faylına və    {% CSRF_TOKEN %}    şablon tag-ini əlavə edirik FORM tag-inin altına.... 
