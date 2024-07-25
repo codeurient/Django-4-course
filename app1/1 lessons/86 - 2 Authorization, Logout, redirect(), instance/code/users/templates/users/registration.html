@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
+                    <h2 class="text-center mb-4">Registration</h2>
+                    {% comment %} 1) ACTİON və METHOD atributlarını təyin edirik. {% endcomment %}
+                    <form action="{% url "user:registration" %}" method="post">
+                        {% comment %} 2) CSRF tokeni elave edirik {% endcomment %}
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {% comment %} 3) FOR və İD atributlarının dəyərlərinə   ID_   sözünü əlavə etməliyik. {% endcomment %}
+                                <label for="id_first_name" class="form-label">Name*</label>
+                                {% comment %} 4) INPUT tag-inə NAME atributunu əlavə edirik və FORMS.PY faylındakı VARİABLE ilə eyni olan adı həmin NAME atributuna dəyər olaraq yazırıq.  {% endcomment %}
+                                {% comment %} 5) Sonra isə VALUE atributunu İF konstruktoru ilə əlavə edirik.  {% endcomment %}
+                                <input name="first_name" type="text" class="form-control" id="id_first_name" placeholder="Enter your name" required       value="{% if form.first_name.value %}  {{form.first_name.value}}  {% endif %}"> 
+                                {% comment %} 6) Xəta mesajlarını göstərmək üçün isə aşağıdakı kimi İF konstruktorundan istifadə edirik. {% endcomment %}
+                                {% if form.first_name.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>      {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_last_name" class="form-label">Surname*</label>
+                                <input name="last_name" type="text" class="form-control" id="id_last_name" placeholder="Enter your surname" required      value="{% if form.last_name.value %}  {{form.last_name.value}}  {% endif %}">
+                                {% if form.last_name.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>      {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_username" class="form-label">Username*</label>
+                                <input name="username" type="text" class="form-control" id="id_username" placeholder="Enter your username" required       value="{% if form.username.value %}  {{form.username.value}}  {% endif %}">
+                                {% if form.username.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>      {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_email" class="form-label">Email*</label>
+                                <input name="email" type="email" class="form-control" id="id_email" placeholder="Enter your email" required                value="{% if form.email.value %}  {{form.email.value}}  {% endif %}">
+                                {% if form.email.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>      {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_password1" class="form-label">Password*</label>
+                                <input name="password1" type="password" class="form-control" id="id_password1" placeholder="Enter your password" required   value="{% if form.password1.value %}  {{form.password1.value}}  {% endif %}">
+                                {% if form.password1.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.password1.errors }}</div>      {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="id_password2" class="form-label">Password*</label>
+                                <input name="password2" type="password" class="form-control" id="id_password2" placeholder="Repeat your password" required  value="{% if form.password2.value %}  {{form.password2.value}}  {% endif %}">
+                                {% if form.password2.errors %}      <div class="alert alert-danger alert-dismissible fade show">{{ form.password2.errors }}</div>      {% endif %}
+                            </div>
+                        </div> 
+                        <button type="submit" class="btn btn-dark btn-block">Registration</button>
+                    </form>  {% comment %} 7) Şablonda daha az kod olması üçün FOR-dan istifadə edə bilərdik ancaq onda gərək CSS stillərini BACKEND-də yazardıq. Biz isə FRONT ilə BACK-i qarışdırmaq istəmirik. {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
