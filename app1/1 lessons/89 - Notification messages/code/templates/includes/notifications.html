@@ -21,9 +21,15 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            {% comment %} 1) Burda gorduyumuz MESSAGES sozu DJANGO-nun daxili deyiskenidir. REQUEST ve USER kimi. Yeni, FORM variable-ı kimi CONTEXT vasitesi ilə şablona ötürməyə ehtiyac yoxdur həmin MESSAGES dəyişkənini. {% endcomment %}
             {% if messages %}
                 {% for message in messages %}
+                {% comment %} 2) MESSAGES.TAGS yazaraq mesajin tipini əldə edirik. Yəni, success, warning, info və.s {% endcomment %}
                     {% if message.tags == 'success' %}
+                    {% comment %} 
+                            3) Məsələn biz saytdan çıxış etdikdə ekranda balaca xəbərdarlıq mesajı açılacaq. Bu pəncərə öz başına bağlana bilmir deyə JAVASCRİPT-dən istifadə etməliyik. Pəncərəni bağlamaq üçün lazım olan JS kodunu
+                               yazmışıq    STATİC - DEPS - JS - JQUERY-EVENTS.JS   faylında.
+                    {% endcomment %}
                     <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" role="alert">
                         {{ message }}
                     </div>
