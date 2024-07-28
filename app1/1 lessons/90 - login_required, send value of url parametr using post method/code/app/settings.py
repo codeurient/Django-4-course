@@ -161,7 +161,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.USER'
 
 
+# 1) Ən aşağı düşərək burada  'LOGİN_URL'  kanstantına deyirik ki, bizi  '/user/login'  linkinə yönləndir. Artıq sayta istifadəçi kimi giriş etmədən url yerində: http://127.0.0.1:8000/user/profile/     
+#    yazsaq, onda yönlənəcəyik:     http://127.0.0.1:8000/user/login/?next=/user/profile/        bu gördüyümüz adresə.   Bu adres bizim LOGİN səhifəmizdir:   /user/login/
 
+#    Artıq   LOGİN  və   PASSWORD   yazaraq sayta giriş etdikdə, proqram bizi  ana səhifəyə göndərəcək.  Yəni,  MAIN:INDEX -ə.  Çünki bunun olmasını controllerin LOGİN() metodunda biz demişik. 
+# 
+#    Ancaq elə ola bilər ki, biz sayta giriş etdikdə   MAİN:INDEX    səhifəsinə yox, hal-hazırda URL yerində qeyd edilən    PROFİLE    səhifəsinə yönlənək. Elə bunun üçün də URL adresində fikir
+#    verməmiz gərəkən yer ona GET sorğu parametrinin əlavə edilmiş olmasıdır:    ?next=/user/profile/
+# 
+#    Bu parametrin adı NEXT-dir və onun dəyəri isə '/user/profile/' -dir. Həmin parametrin dəyərini əldə etmək üçün isə    GET.get('next)    metodundan istifadə edə bilərik. 
+#    Bu parametrin dəyərini əldə etmək üçün həmin dəyəri ilk öncə göndərmək lazımdır. Göndərmək üçün isə daxil oluruq     USERS - TEMPLATES - USERS - LOGİN.HTML     faylına və GET ilə əldə edərək 
+#    POST ilə controller-ə göndəririk.
 LOGIN_URL = '/user/login/' 
 
 

@@ -1,0 +1,13 @@
+# 1) Deməli əgər istifadəçi saytdan çıxdıqdan sonra yaxud sayta giriş etmədən, Brauzerdə url bölməsində belə bir link yazaraq Enter-ə basarsa:    http://127.0.0.1:8000/user/profile
+#    'AttributeError at /user/profile/'  xəta mesajına əvəzinə     'Page not found (404)'    səhifəsi ilə qarşılaşmaq üçün   'login_required'     funksiyasını İMPORT etdik. 
+
+
+
+# 2) Sonra aşağıda PRFOİLE() metodunda olduğu kimi    '@login_required'     dekaratorundan istifadə edərək, demiş olduq ki, əgər istifadəçi qeydiyyatdan keçməyibdirsə onda həmin controller
+#    bu istifadəçi üçün əl çatan olmasın. Yəni, istifadəçi qeydiyyatdan keçdikdən sonra bu PROFİLE() metodu və onun içində ki, kodlar həmin istifadəçi üçün istifadəyə yararlı olacaqdır. 
+
+
+
+# 3) Əgər, istifadəçinin   'Page not found (404)'   əvəzinə  LOGİN səhifəsinə yönləndirilməsini istəyiriksə necə edə bilərik ? Çünki   'login_required'   dekaratoru, əslində bizi LOGİN səhifəsinə 
+#    göndərməli idi. Sadəcə hal-hazırda bu dekarator adekvat işləmədiyi üçün bizi default olaraq   'Page not found (404)'  səhifəsinə yönləndirir.  Dekaratorun doğru işləməsi üçün ayarlara daxil
+#    olaraq bu ayarları yenidən təyin etmək lazımdır. Ayarlar yerləşir:    APP/SETTINGS.PY   faylının içində...

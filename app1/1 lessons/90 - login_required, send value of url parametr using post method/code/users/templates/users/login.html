@@ -10,6 +10,7 @@
                     <form action="{% url "user:login" %}" method="POST">
                         {% csrf_token %}
 
+                        {% comment %} 1) URL-də olan NEXT parametrinin dəyərini gizli İNPUT tag-inin VALUE atributu ilə controller-ə göndəririk:      next=  /user/profile/  {% endcomment %}
                         {% if request.GET.next %} 
                             <input type="hidden" name="next" value={{ request.GET.next }}>  
                         {% endif %}

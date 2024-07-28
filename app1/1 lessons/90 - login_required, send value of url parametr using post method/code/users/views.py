@@ -16,9 +16,19 @@ def login(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, f"{username}, You are now logged in")
-        
+                # 1) Deməli sayta giriş etmədən URL yerində   'user/profile'   yazdıqda LOGİN.HTML şablonuna yönlənirik və url yerində belə bir link görürük: http://127.0.0.1:8000/user/login/?next=/user/profile/
+                # 2) Sonra saytda giriş etmək üçün NAME və PAROL-u daxil edərək ENTER düyməsini basırıq. Bu vaxt ŞABLON-dan, POST metodu vasitəsi ilə URL yerindəki linkin   NEXT    parametrinin   '/user/profile/'   dəyərini 
+                #    digər dəyərlər ilə birlikdə ötürmüş oluruq hal-hazırda içində olduğumuz    USERS/VIEWS.PY    controller-inin LOGIN() metoduna. 
+                # 
+                # 3) Sonra şərt qoşuruq ki, əgər şablondan POST metodu ilə GET() edilən 'NEXT' parametri varsa, RETURN olsun HttpResponseRedirect() metodu.   HttpResponseRedirect() metoduda bizi yönləndirir  'user/profile'  linkinə.
+                #   
+                #   GET() metodunun 1ci parametri NEXT parametridir. 2ci parametri isə əgər belə bir parametr yoxdursa default olaraq NONE olsun yəni heçnə baş verməsin.
+                # 
+                #   request.POST.get('next') kodunun bizə verdiyi nəticə 'user/profile' - dir.
                 if request.POST.get('next', None):
                     return HttpResponseRedirect(request.POST.get('next'))
+                # 4) Sayta normal LOGİN olaraq daxil olmaq istədikdə onda aşağıdakı   HttpResponseRedirect()  metodu işləyir. LOGİN olmadan URL yerində    'user/profile'    etmək istədikdən  sonra daxil ola bilməyərək LOGİN.HTML 
+                #    səhifəsinə yönlənib sonra sayta daxil olmaq istədikdə onda yuxarıdakı  HttpResponseRedirect() metodu işləyir.
                 return HttpResponseRedirect(reverse('main:index'))
     else:
         form = UserLoginForm()
