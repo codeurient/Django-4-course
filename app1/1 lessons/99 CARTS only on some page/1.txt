@@ -1,0 +1,14 @@
+1) Header hissede yazili olan CART sozune basaraq sebet sehifesine kecid etdikde sol terefde SEBET ikonu gorsenmemelidir. Cunki 2 eyni şeyi göstərmək məntiqli olmaz. 
+
+
+
+
+
+
+2) Sebet ikonunu basdiqda acilan pencereye MODAL pencere deyirler. Bu ikon yerləşir    TEMPLATES / BASE.HTML    faylının içində. Həmin səbət ikonunu və bu ikonu basdıqda 
+açılan MODAL pəncərəni başqa fayla yerləşdirməliyik. 
+
+
+
+
+

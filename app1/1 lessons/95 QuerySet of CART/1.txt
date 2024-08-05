@@ -1,0 +1,16 @@
+1) İki nomreli sekilde neleri gormeliyik ?
+
+            a) Ümumi məhsul miqdarını
+            b) Ümumi məhsul miqdarının qiymətini
+            c) Alt-alta bütün məhsulların adları sıralanmalıdır. Yəni istifadəçinin öz səbətinə əlavə etdiyi bütün məhsulları görməliyik
+
+QEYD: Diqqət etmək lazımdır ki, məhsul hələki sifariş edilməyib. Hələki SƏBƏTƏ əlavə edilib.
+
+
+İstifadə məhsulu səbətə əlavə edəndə həmin məhsul DB-sə yaddaşa yazılı və biz həmin məhsulları admin paneldə görə bilərik. Hal-hazırda bizim etdiyimiz şey odurki bu məhsulları 
+DB-dən çağıraq və 2 nömrəli şəkildə olan səbət pəncərəsində sıralayaq ki, istifadəçi həm görsün nələri sifariş edib, həm məhsulun sayını artıra bilsin həm silə bilsin və.s.
+
+
+
+
+

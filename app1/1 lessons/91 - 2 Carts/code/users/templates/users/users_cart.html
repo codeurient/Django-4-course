@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% comment %} 1) CART.HTML (5 nömrəli şəkil) dən götürdüyümüz şablon kodlarını block içinə yerləşdiririk.  {% endcomment %}
+{% block content %}
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class=" bg-white p-4 mb-4 mx-2 rounded custom-shadow">
+                    <h3 class="text-center mb-4">Cart</h3>
+                    <div class="container" id="cart-items-container">
+
+
+                        <!-- Cart layout -->
+                         
+                        {% comment %} 
+                                        2) Buraya  SƏBƏT   ilə bağlı yaratmış olduğumuz    İNCLUDED_CART.HTML    faylını   İNCLUDE   edirik.   Bu    USERS_CART.HTML   faylı HEADER hissədə olan CART sözünə basdıqda
+                                           açılan səhifədir. 
+                        {% endcomment %}
+                        {% include "carts/includes/included_cart.html" %}
+                        
+                        <!-- The cart has finished marking -->
+
+
+                    </div>
+                    <a class="btn btn-dark" href="../orders/create_order.html"> Checkout </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

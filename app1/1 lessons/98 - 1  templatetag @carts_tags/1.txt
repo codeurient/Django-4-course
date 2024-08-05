@@ -1,0 +1,16 @@
+1) Sayta giris eden istifadeci:
+                                a) Sebet linkine basaraq sebet sehifesine daxil olduqda
+                                b) istifadeci oz profile daxil olduqda gorduyu sebet 
+                                c) Sol terefdeki sebet ikonuna basdiqda
+
+
+Bunu öz şablon tag-imizi yaradaraq edəcəyik. 
+
+
+İlk öncə CARTS qovluğunun içində       TEMPLATETAGS      adında qovluq bu qovluğun içində də paket faylı olan      __init__.py      faylını yaradırıq. 
+
+
+Sonra isə həmin     TEMPLATETAGS     qovluğunda     CARTS_TAGS.PY      adında şablon tagimiz üçün gərəkli olan faylımızı yaradırıq.  
+
+
+Bu şablon tag-inin icinde yaradacağımız metod vasitəsi ilə CART modelindən FİLTERT() metodu vasitesi ilə, istifadecinin elave etdiyi mehsullari elde edeceyik. 

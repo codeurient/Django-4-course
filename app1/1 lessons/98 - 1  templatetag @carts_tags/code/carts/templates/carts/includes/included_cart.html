@@ -1,0 +1,47 @@
+{% load static %}
+{% load carts_tags %}   {% comment %} 1) CARTS_TAGS  faylını LOAD edirik  {% endcomment %}
+
+
+{% comment %} 2) Bu fayldan REQUEST sorğusunu göndəririk CARTS_TAGS.PY faylındakı USER_CARTS() funksiyasına və RETURN olan QUERYSET nəticəsini əldə edərək CARTS variable-ına veririk.  {% endcomment %}
+{% user_carts request as carts %}
+
+
+
+<div class="card mb-3 text-bg-light shadow-lg">
+    {% comment %} 3) Sonra CARTS variable-ında olan QUERYSET-i FOR döngüsü ilə parçalayaraq məhsulları əldə edirik və veririrk CART variable-ına. {% endcomment %}
+    {% for cart in carts %}
+        <div class="card-header">
+            {% comment %} 4) Niyə görə PRODUCT yaza bildik ? Çünki CART modeli ilə həmin PRODUCT modelini FOREİGN KEY vasitəsi ilə  əlaqələndirmişik. {% endcomment %}
+            <h5 class="card-title">{{ car.product.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="row text-center">
+                    <div class="col p-0">
+                        <div class="input-group">
+                            <span class="input-group-btn">   <button type="button" class="btn btn-dark btn-sm decrement" data-cart-id="" data-cart-change-url="">-</button>   </span>
+                            {% comment %} 5) {% endcomment %}
+                            <input type="text"  class="form-control number" value="{{ cart.quantity }}" readonly>
+                            <span class="input-group-btn">   <button type="button" class="btn btn-dark btn-sm increment" data-cart-id="" data-cart-change-url="">+</button>   </span>
+                        </div>
+                    </div>
+                    {% comment %} 6) {% endcomment %}
+                    <div class="col p-0">   <p>x {{ cart.product.sell_price }} = </p>   </div>
+                    <div class="col p-0">   <strong>{{ cart.products_price }} $</strong>   </div>
+
+                    <div class="col p-0">
+                        <a href="{% url "cart:cart_remove" 1 %}" class="remove-from-cart" data-cart-id="">  <img class="mx-1" src="{% static "deps/icons/trash3-fill.svg" %}" alt="Catalog Icon" width="16" height="16">  </a>
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    {% endfor %}
+</div>
+<div class="card mb-3 shadow-lg">
+    <div class="card-footer">
+        {% comment %} 7) Burda CART yazmiriq CARTS yaziriq. Cunki birinci olaraq FOR dognsunun icinde deyilik. Birdeki 'total_quantity' carts queryset-inin icindedi. {% endcomment %}
+        <p class="float-left">Total <strong>{{ carts.total_quantity }}</strong> item(s) worth </p>
+        <h4 class="float-left"><strong>{{ carts.total_price }} $</strong></h4>
+    </div>
+</div>

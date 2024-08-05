@@ -1,0 +1,26 @@
+1) İnternet maqazinə kimsə daxil olduqda istəyir qeydiyyatdan keçmiş olsun istəyir keçməmiş olsun yenədə səbətə məhsul əlavə edə bacarmalıdır. 
+
+
+
+2) Elə etmək lazımdır ki, istifadəçi qeydiyyatdan keçməmiş belə olsa səbətə məhsul əlavə etsin və əgər məhsulu almaq istəsə artıq məcbur olacaq qeydiyyatdan keçməyə. 
+
+
+
+3) İlk öncə daxil oluruq    CARTS / MODELS.PY    faylına və cədvəldəki     USER    sahəsinə düzəliş edərək   'blank = True,  null = True'   parametrlərini əlavə edirik ki,
+   yəni bu sahə boş ola bilər. Yəni, məhsulu saytda qeydiyyatdan keçməmiş istifadəçidə səbətə əlavə edə bilsin deyə belə edirik. 
+
+   Və Cədvələ,   SESSİON_KEY   adında yeni bir sahə daha əlavə edirik. Nəyə lazımdır bu sahə ?
+
+   Deməli, DJANGO  default olaraq sayta daxil olan hər istifadəçiyə unikal SESSİON açarı təqdim edir. Bu açar vasitəsi ilə hansı istifadəçi qeydiyyatdan keçmədən səbətə məhsul
+   əlavə edib bilirik və əgər istifadəçi qeydiyyatdan keçərsə bu   SESSİON_KEY  sahəsinin vasitəsi ilə həmin məhsulları  SESSİON-lardan ötürürük USER sahəsinə. Həmdə məhsulu 
+   SESSİON-lardan istifadə edərək əks etdiririk əgər istifadəçi qeydiyyatdan keçməyibdirsə.
+
+   Yox əgər səbəti sifariş etmək istəsə istifadəçiyə onda mesaj göstərəsiyik ki, qeydiyyatdan keçin və keçərsə onda səbətdəki məhsulları SESSİON-lardan USER sahəsinə ötürəcəyik. 
+
+
+
+
+
+
+
+4) indi daxil oluruq   CART / ADMIN.PY    faylına ki, modelimizi qeydiyyatdan keçirək.

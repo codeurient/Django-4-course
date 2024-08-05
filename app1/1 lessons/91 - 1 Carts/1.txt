@@ -1,0 +1,5 @@
+1)  Səbət üçün CARTS adında yeni tətbiq yaradırıq:    python manage.py startapp carts
+
+
+
+2) Sonra ilk novbe olaraq hemin tetbiqi       APP/SETTINGS.PY      faylinda qeydiyyata aliriq.
