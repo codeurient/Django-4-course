@@ -16,16 +16,18 @@
                     <h3 class="text-center mb-4">Cart</h3>
                     <div class="container" id="cart-items-container">
 
-
                         <!-- Cart layout -->
         
                         {% include "carts/includes/included_cart.html" %}
                         
                         <!-- The cart has finished marking -->
 
-
                     </div>
-                    <a class="btn btn-dark" href="../orders/create_order.html"> Checkout </a>
+
+                    {% if carts %}
+                        <a class="btn btn-dark" href="orders/create_order.html"> Checkout </a>
+                    {% endif %}
+
                 </div>
             </div>
         </div>

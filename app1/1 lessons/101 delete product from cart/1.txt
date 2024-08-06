@@ -1,0 +1,1 @@
+1) Indi sebetden mehsulun silinmesini edeceyik. Daxil oluruq      CARTS / URLS.PY     faylına   

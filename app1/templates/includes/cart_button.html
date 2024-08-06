@@ -30,7 +30,10 @@
                         
                     <!-- The cart has finished marking -->
                 </div>
-                <a class="btn btn-dark" href="orders/create_order.html"> Checkout </a>
+
+                {% if carts %}
+                    <a class="btn btn-dark" href="orders/create_order.html"> Checkout </a>
+                {% endif %}
             </div>
 
             
