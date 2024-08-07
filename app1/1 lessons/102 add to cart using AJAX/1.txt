@@ -1,0 +1,22 @@
+1) Bu dərsdə səbətə məhsul əlavə edildikdən sonra + və - düymələrini basaraq məhsul sayısının artırılmasını və azaldılmasını edəcəyik. 
+
+
+Ancaq BACKEND-də bu + və - düymələrini kliklədikdə hər dəfə səhifə yenilənir. Səhifə yenilənmədən məhsul artirmaq və azaltmaq üçün AJAX sorğudan istifadə edəcəyik. 
+
+
+AJAX istifade etdikde sorgu bilavasite AJAX ile gonderilir ve controller hemin sorgunu elde ederek işləyir. Bu sorgu GET yox POST sorgu olaraq gonderilir.
+Controller POST sorrgunu qebul etdikden sonra geri cavab olaraq REDİRECT() yox JSON formati gonderecek. 
+
+
+Controller-dən gonderilen JSON formati, JQUERY scripti elde edecek ve movcud sehifeni yenilenmeye ehtiyac olmadan formalasdiracaq. 
+
+
+
+
+
+
+
+Daxil oluruq        TEMPLATES / BASE.HTML       ve        STATİC / JS / JQUERY-AJAX.JS      ve      STATİC / JS / JQUERY-EVENTS.JS     fayllarina. 
+
+
+
