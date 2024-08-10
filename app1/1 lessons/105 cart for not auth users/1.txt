@@ -1,0 +1,27 @@
+1) Indi isə qeydiyyatdan keçməyən istifadəçilər üçün səbət-ə məhsulun əlavə edilməsi funksionallığını yaradacağıq. 
+
+
+
+2) Saytdan çıxış edirik və görərik ki, səbət boşdur
+
+
+
+3) Sayta giris etmeyen istifadecinin sebete mehsul elave ede bilmesi ucun SESSİON-lardan istifade edecek
+
+
+
+4) Django her istifadeci ucun yaxud buna brauzerde demek olar cunki her istifadeci brauz ile giris edir ve django her brauz-ə unikal olan SESSİON KEY verir. 
+
+
+
+5) Session İD-ni gormek ucun sayta giris ederek 2 nomreli sekilde oldugu kimi yoxlamaq olar                              (Kontrol noqtesi qoyaraq mehsulu sebete elave et ikonuna basiriq)
+
+
+
+6) İndi saytdan cixis ederek yeniden baxsaq gorerik ki, SESSİON İD deyer olaraq NONE gosterecek. 3 nomreli sekil.        (Kontrol noqtesi qoyaraq mehsulu sebete elave et ikonuna basiriq)           
+
+
+
+7) Giris etdikde AVTO olaraq session key verilir giris etmedikde ise yox. Bunun ucun istifadeci giris etmedikde özümüz MANUL olaraq session key verə bilerik. 
+
+
