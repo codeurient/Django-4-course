@@ -31,5 +31,13 @@ class Cart(models.Model):
         return round(self.product.sell_price() * self.quantity, 2)
    
     def __str__(self):
-        return f'Cart {self.user.username} | Product {self.product.name} | Quantity {self.quantity}'
+        # 1) 104 nomreli dersde sebete anonim olaraq mehsul elave etdikde Admin panelde xeta mesaji alirdiq cunki istifadeci yoxdursa USERNAME null olurdu. Bunun ucunde xeta mesaji alirdiq.
+        #    Buna gore de, şərt qoşaraq deyirik ki, əgər USER varsa nəticə qayıtsın əks halda USER olmadan qayıtsın nəticə. 
+        if self.user:
+            return f'Корзина {self.user.username} | Товар {self.product.name} | Количество {self.quantity}'
+                
+        return f'Анонимная корзина | Товар {self.product.name} | Количество {self.quantity}'
+    
+
+
     
