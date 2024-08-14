@@ -1,0 +1,27 @@
+1) Indi admin olmayan yeni istifadeci yaradiriq.
+
+
+2) Sonra daxil oluruq saytimiza
+
+
+3) Sebet bosdur ve sebete yeni mehsul elave etdikden sonra? sol terefde dayanan sebet ikonuna klikleyerek modal pencereni acib baxiriq.
+
+Modal pencerede asagida CHECKOUT duymesini gormeyeceyik. Ancaq sehifeni yeniledikden sonra sebet ikonuna basaraq modal pencereni acsaq onda hemin duyme peyda olacaq.
+
+
+Bunun sebebi AJAX-in sebet şablonunu yenidən təyin etməsi ancaq CHECKOUT yazısı olan A tag-inin bu səbət şablonunun çölündə yerləşməsidir:
+
+
+            <div class="modal-body">
+                <div class="container" id="cart-items-container">     {% include "carts/includes/included_cart.html" %}          </div>
+
+
+
+
+
+                {% if carts %}     <a class="btn btn-dark" href="{% url "orders:create_order" %}"> Checkout </a>        {% endif %}
+            </div>
+
+
+
+Yuxaridaki kod CART_BUTTON.HTML faylindaki koddur ve gorduyumuz kimi INCLUDE yerlesir A tag-inin yuxarisinda. 

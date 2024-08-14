@@ -1,0 +1,42 @@
+1) Səbətə məhsulların əlavə edilməsini gördük. İndi səbətin təsdiqlənməini işləyəcəyik. Yəni istifadəçi düyməni basaraq səbəti təsdiqləyəcək, adresi qeyd edəcək və sifarişi
+təsdiqləyəcək. 
+
+
+
+
+
+2) Bunun üçün ilk öncə yeni tətbiq yaradırıq:   python manage.py startapp orders 
+
+
+
+
+
+3) APP / SETTİNGS.PY    faylını konfiqurasiya edirik
+
+
+
+
+
+4) APP / URLS.PY        faylını konfiqurasiya edirik
+
+
+
+
+
+5) ORDERS qovluğuna TEMPLATES, ORDERS qovluqlarını və CREATE_ORDERS.HTML faylını əlavə edirik:   ORDERS / TEMPLATES / ORDERS / CREATE_ORDERS.HTML
+
+   dev_env   /   templates-for-Django-4-course-Home-main    /    orders    /     create_order.html      faylından lazım olan kodlarımızı götürürük və yerləşdiririk yuxarıdaki CREATE_ORDERS.HTML faylına.  
+
+    2 nomreli şəkildə olduğu kimi.
+
+
+
+
+6) TEMPLATES / INCLUDES / CART_BUTTON.HTML   faylına daxil olaraq CHECHKOUT sözünün yazılı olduğu A tag-inə URL əlavə edirik ki, bu düyməni basdıqda SİFARİŞ səhifəsinə keçid edə bilək. 
+
+
+
+
+ 
+
+7) Sonra ORDERS  qovluğuna  URLS.PY  faylını əlavə edirik. 

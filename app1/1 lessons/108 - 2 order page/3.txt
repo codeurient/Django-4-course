@@ -1,0 +1,25 @@
+1) Proqramı işə salaraq    http://127.0.0.1:8000/orders/create_order/     səhifəsinə daxil olaq
+
+
+Burada 'NAME' 
+       'SURNAME'
+       'PHONE NUMBER'   sahələri mövcuddur. Bu sahələri biz nə ORDER nədəki ORDERİTEM cədvəllərinə əlavə etmişik. Ancaq həmin bu sahələr mövcuddur USER adlı cədvəldə və
+                        ORDER cədvəli ilə həmin USER cədvəli arasında bağlantı vardır. 
+
+
+
+
+
+
+2) İndi ORDERS qovluğunda FORMS.PY faylını yaradırıq. Bu fayl nə üçün idi ?  Bu fayl içində yaradılan CLASS bizim MODEL-imiz ilə avtomatik əlaqə quraraq
+   VALIDATION əməliyyatlarını icra etmək üçün istifadə edilirdi.  
+
+   Bu FORMS ilə əlaqəli işləri USER modelini yaratdıqda etmişdik. USER modeli FORM ilə bağlantılı idi. Sahə adlarını avtomatik olaraq validate edirdi. 
+
+
+   ORDER modeli ilə əlaqəli yaradacağımız FORMS isə onunla avtomatik bağlantılı olmayacaq. İlk öncə öz xüsusi VALİDATE əməliyyatlarımızı MANUL şəkildə edəcəyik. 
+
+
+
+
+

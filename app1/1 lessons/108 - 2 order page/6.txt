@@ -1,0 +1,1 @@
+1)    create_order.html   faylında şablon tag-lərimizi yazdıqdan sonra proqramı işə salsaq veb səhifə doğru işləmiyə bilər çünki controller-i hələki yazmamışıq. 
