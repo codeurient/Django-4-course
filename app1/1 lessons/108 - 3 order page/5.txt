@@ -1,0 +1,35 @@
+1) Proqramı işə saldıqdan sonra səbətə məhsullar əlavə edirik
+
+
+
+
+2) Sonra Checkout düyməsini basaraq      http://127.0.0.1:8000/orders/create_order     səhifəniə gedirik
+
+
+
+
+3) Sonra       Accept your order       düyməsini basaraq səbətdəki məhsulları sifariş edirik
+
+
+
+
+4) Bu zaman DB-də 2 dənə cədvəl yaranacaq:
+                                            a) Order
+                                            b) OrderItem
+
+
+
+
+5) Order cedvelinde sifariş edən istifadəçinin İD-si, qısaca bu istifadəçi haqqında məlumatlar olacaq
+
+
+
+
+
+6) Orderİtem cədvəlində isə məhsul haqqında məlumat olacaq. Yəni, istifadəçinin səbətə əlavə etdiyi  dənə məhsul varsa Orderİtem cədvəlində 4 sütun bu məhsul İD-ləri alt-alta yaradılacaq. 
+
+
+
+
+
+7) Şəkil nömrə 6 və 7 -də olduğu kimi. 
