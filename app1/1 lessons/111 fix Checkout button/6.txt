@@ -1,0 +1,21 @@
+1. Sonra proqramı işə salaraq SAĞ tərəfdəki DjDT ə klikləyərək SQL bölməsini açırəq. 7 nömrəli şəkildə olduğu kimi
+
+Burada aşağıda iki dənə belə sorğu görəcəyik 
+
+
+
+a) SELECT ••• FROM "cart" WHERE "cart"."user_id" = 5
+	
+	
+b) SELECT ••• FROM "product" WHERE "product"."id" = 5 LIMIT 21
+
+
+
+
+
+Birincisi odur ki, CART yəni səbət modelinə müraciət edilir və istifadəçisinin bütün səbəti əldə edilir. 
+
+İkincisi udir ki, PRODUCT modelinə müraciət edilir və eyni məhsul çağrılır. 
+
+
+İki eyni sorğu olmaması üçün       CART / UTILS.PY      faylına daxil oluruq və      SELECT_RELATED()     metodunu əlavə edirik. 
