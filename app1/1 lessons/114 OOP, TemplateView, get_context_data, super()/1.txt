@@ -1,0 +1,51 @@
+Real proyektlərin yığılmasında OOP dən istifadə edilir. 
+
+
+
+
+
+Çünki bu cür saytın sonradan inkişaf etdirilməsi, kodun oxunması daha rahat olur. 
+
+
+
+
+
+CLASS -lar haqqinda olan məlumat bu linkdədir:    https://docs.djangoproject.com/en/5.1/topics/class-based-views/
+
+
+
+
+
+Bu dokumentasiyada VIEW deyilən bir CLASS adı vardrı. Bizim yaratdığımız class-lar bu ana class olan VIEW class-ını izləməlidir. Yaxud başqa əməliyyatlar üçün başqa class-lar var yəni daha sadə əməliyyatlar üçün həmin digər class adlarından
+da istifadə edilir. 
+
+ Məsələn:
+         VIEW           - əsasən HTTP (get, post) sorğuları işləmək üçün istifadə edilir.
+         TemplateView   - əsasən sadə (about kimi) şablonları render etmək istədikdə istifadə edilir.
+         RedirectView   - əsasən istifadəçini başqa səhifəyə yönəltmək istədikdə istifadə edilir və.s
+
+
+
+
+
+Biz öz class-larımızı yaratdıqdan sonra həmin class-ların içində xüsusi django metodları vardır məsələn GET(), POST() və.s  kimi və bizdə bu metodları istifadə etməliyik. 
+
+
+
+
+
+
+Öz metodlarımızı yarada bilərik. Xüsusi metodlarıda istifadə edə bilərik.
+
+
+
+
+
+GET()  metodu istifadəçi tərəfindən gələn GET sorgulari işləyir.  
+
+
+
+
+
+
+OOP-ni ilk tətbiq edəcəyimiz tətbiq        MAİN / VIEWS.PY       olacaq.   Çünki hal-hazırda ən sadəi odur.
